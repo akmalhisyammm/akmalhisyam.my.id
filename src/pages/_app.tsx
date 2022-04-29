@@ -2,11 +2,12 @@ import { ChakraProvider } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import 'styles/globals.css';
+import '@fontsource/open-sans';
+import customTheme from 'styles/customTheme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={customTheme}>
       <Head>
         <meta
           name="viewport"
