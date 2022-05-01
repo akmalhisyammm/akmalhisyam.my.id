@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   Text,
   VStack,
+  useColorMode,
 } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { useRouter } from 'next/router';
@@ -16,6 +17,7 @@ import { ProjectContext } from 'contexts/project';
 const FeaturedProjects = () => {
   const router = useRouter();
   const projectsCtx = useContext(ProjectContext);
+  const { colorMode } = useColorMode();
 
   return (
     <Box marginY={12}>
@@ -27,14 +29,18 @@ const FeaturedProjects = () => {
         {projectsCtx.projects.slice(0, 4).map((project) => (
           <ChakraLink key={project.id} href={project.link} isExternal>
             <Box
-              borderRadius={20}
+              borderRadius={18}
               overflow="hidden"
               position="relative"
               borderWidth={2}
               height={200}
               cursor="pointer"
               transition="0.2s ease-out"
-              _hover={{ transform: 'scale(1.04)' }}>
+              _hover={{
+                transform: 'scale(1.04)',
+                borderWidth: '3px',
+                borderColor: colorMode === 'light' ? 'blue.500' : 'blue.200',
+              }}>
               <Image
                 src={project.preview_path}
                 alt={project.name + ' Preview'}
