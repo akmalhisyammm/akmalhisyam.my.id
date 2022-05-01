@@ -1,8 +1,9 @@
 import { Box, useColorMode } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import Footer from './Footer';
-import Header from './Header';
+
 import Meta from './Meta';
+import Header from './Header';
+import Footer from './Footer';
 
 type LayoutProps = {
   title?: string;

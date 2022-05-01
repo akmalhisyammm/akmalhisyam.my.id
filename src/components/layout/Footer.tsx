@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <Box as="footer" position="relative" width="full" textAlign="center" marginY={8}>
+    <Box as="footer" position="relative" width="full" textAlign="center">
       <Text>
         2022 &bull;{' '}
         <Link href="/about" passHref>
