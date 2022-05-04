@@ -21,7 +21,7 @@ const Footer = () => {
       position="relative"
       width="full"
       textAlign="center"
-      borderTop="1px solid"
+      borderTopWidth={1}
       paddingY={4}>
       <HStack justifyContent="center" spacing={3}>
         {aboutCtx.about.social_media.map((sm) => (
