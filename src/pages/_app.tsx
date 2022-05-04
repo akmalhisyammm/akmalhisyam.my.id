@@ -1,4 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
+import { AnimatePresence } from 'framer-motion';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { AboutProvider } from 'contexts/about';
@@ -7,7 +8,7 @@ import { ProjectProvider } from 'contexts/project';
 import '@fontsource/open-sans';
 import customTheme from 'styles/customTheme';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ChakraProvider theme={customTheme}>
       <Head>
@@ -19,7 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <AboutProvider>
         <ProjectProvider>
-          <Component {...pageProps} />
+          <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
+            <Component {...pageProps} key={router.route} />
+          </AnimatePresence>
         </ProjectProvider>
       </AboutProvider>
     </ChakraProvider>
