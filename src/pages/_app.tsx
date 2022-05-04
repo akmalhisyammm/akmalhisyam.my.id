@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import type { AppProps } from 'next/app';
+import { AppProps } from 'next/app';
 import Head from 'next/head';
-
+import { AboutProvider } from 'contexts/about';
 import { ProjectProvider } from 'contexts/project';
 
 import '@fontsource/open-sans';
@@ -17,9 +17,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
 
-      <ProjectProvider>
-        <Component {...pageProps} />
-      </ProjectProvider>
+      <AboutProvider>
+        <ProjectProvider>
+          <Component {...pageProps} />
+        </ProjectProvider>
+      </AboutProvider>
     </ChakraProvider>
   );
 }
