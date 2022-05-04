@@ -22,17 +22,15 @@ type AboutProviderProps = {
 const AboutProvider = ({ children }: AboutProviderProps) => {
   const about: AboutData = {
     photo: '/about/akmal.jpg',
-    summary: {
-      paragraph_1:
-        "Hi! I'm Muhammad Akmal Hisyam, you can call me Akmal. I'm third year Informatics\
-        student at Multimedia Nusantara University. In second year, I started to learn web\
-        development, especially front-end development.",
-      paragraph_2:
-        "Currently, I'm learning React framework and its ecosystem. I usually take online\
-        courses and understand code from other people's projects to find best practices in\
-        writing code and improve my skills. I enjoy learning something that I'm passionate\
-        about.",
-    },
+    summary: [
+      "Hi! I'm Muhammad Akmal Hisyam, you can call me Akmal. I'm third year Informatics\
+      student at Multimedia Nusantara University. In second year, I started to learn web\
+      development, especially front-end development.",
+      "Currently, I'm learning React framework and its ecosystem. I usually take online\
+      courses and understand code from other people's projects to find best practices in\
+      writing code and improve my skills. I enjoy learning something that I'm passionate\
+      about.",
+    ],
     favorite_tech_stack: [
       {
         name: 'React',

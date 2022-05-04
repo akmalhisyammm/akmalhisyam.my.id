@@ -1,10 +1,5 @@
 import { IconType } from 'react-icons';
 
-interface SummaryData {
-  paragraph_1: string;
-  paragraph_2: string;
-}
-
 interface FavoriteTechStackData {
   name: string;
   icon: IconType;
@@ -18,7 +13,7 @@ interface SocialMediaData {
 
 export interface AboutData {
   photo: string;
-  summary: SummaryData;
+  summary: string[];
   favorite_tech_stack: FavoriteTechStackData[];
   social_media: SocialMediaData[];
 }

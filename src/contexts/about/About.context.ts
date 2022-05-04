@@ -8,7 +8,7 @@ interface Context {
 const AboutContext = createContext<Context>({
   about: {
     photo: '',
-    summary: { paragraph_1: '', paragraph_2: '' },
+    summary: [],
     favorite_tech_stack: [],
     social_media: [],
   },
