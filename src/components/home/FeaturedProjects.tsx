@@ -1,8 +1,8 @@
 import {
   Box,
   Button,
-  HStack,
   Heading,
+  HStack,
   Image,
   Link as ChakraLink,
   SimpleGrid,
@@ -20,7 +20,7 @@ const FeaturedProjects = () => {
   const { colorMode } = useColorMode();
 
   return (
-    <Box marginY={12}>
+    <Box marginY={8}>
       <Heading as="h3" fontSize={24}>
         Featured Projects
       </Heading>
@@ -73,7 +73,7 @@ const FeaturedProjects = () => {
         variant="outline"
         borderRadius="full"
         isFullWidth
-        onClick={() => router.push('/projects')}>
+        onClick={() => router.replace('/projects')}>
         View all projects
       </Button>
     </Box>
