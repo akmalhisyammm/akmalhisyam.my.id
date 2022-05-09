@@ -9,6 +9,7 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiReact,
+  SiTwitter,
   SiTypescript,
 } from 'react-icons/si';
 import { AboutData } from 'types/about';
@@ -23,9 +24,9 @@ const AboutProvider = ({ children }: AboutProviderProps) => {
   const about: AboutData = {
     photo: '/about/akmal.jpg',
     summary: [
-      "Hi! I'm Muhammad Akmal Hisyam, you can call me Akmal. I'm third year Informatics\
-      student at Multimedia Nusantara University. In second year, I started to learn web\
-      development, especially front-end development.",
+      "Hi! I'm Muhammad Akmal Hisyam, you can call me Akmal. I'm a third-year Informatics\
+      student at Multimedia Nusantara University. I started learning web development in\
+      my second year, especially front-end development.",
       "Currently, I'm learning React framework and its ecosystem. I usually take online\
       courses and understand code from other people's projects to find best practices in\
       writing code and improve my skills. I enjoy learning something that I'm passionate\
@@ -61,7 +62,7 @@ const AboutProvider = ({ children }: AboutProviderProps) => {
       {
         name: 'LinkedIn',
         icon: SiLinkedin,
-        link: 'https://www.linkedin.com/in/muhammadakmalhisyam/',
+        link: 'https://www.linkedin.com/in/muhammadakmalhisyam',
       },
       {
         name: 'GitHub',
@@ -71,7 +72,12 @@ const AboutProvider = ({ children }: AboutProviderProps) => {
       {
         name: 'Instagram',
         icon: SiInstagram,
-        link: 'https://www.instagram.com/akmalhisyam1/',
+        link: 'https://www.instagram.com/akmalhisyam1',
+      },
+      {
+        name: 'Twitter',
+        icon: SiTwitter,
+        link: 'https://twitter.com/akmalhisyammm',
       },
       {
         name: 'Email',
