@@ -15,22 +15,6 @@ import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { ProjectContext } from 'contexts/project';
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.4,
-    },
-  },
-};
-
-const item = {
-  hidden: { y: 50, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { ease: 'easeOut' } },
-};
-
 const FeaturedProjects = () => {
   const router = useRouter();
   const projectsCtx = useContext(ProjectContext);
@@ -47,10 +31,27 @@ const FeaturedProjects = () => {
         </Heading>
       </motion.div>
 
-      <motion.div variants={container} initial="hidden" animate="show">
+      <motion.div
+        variants={{
+          hidden: { opacity: 0 },
+          show: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.2,
+              delayChildren: 0.4,
+            },
+          },
+        }}
+        initial="hidden"
+        animate="show">
         <SimpleGrid columns={[1, 2, 2]} gap={6} marginY={4}>
           {projectsCtx.projects.slice(0, 4).map((project) => (
-            <motion.div key={project.id} variants={item}>
+            <motion.div
+              key={project.id}
+              variants={{
+                hidden: { y: 50, opacity: 0 },
+                show: { y: 0, opacity: 1, transition: { ease: 'easeOut' } },
+              }}>
               <ChakraLink href={project.link} isExternal>
                 <Box
                   borderRadius={18}

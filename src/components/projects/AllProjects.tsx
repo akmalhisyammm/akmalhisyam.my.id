@@ -15,22 +15,6 @@ import { FaChevronRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { ProjectContext } from 'contexts/project';
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const item = {
-  hidden: { y: 50, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { ease: 'easeOut' } },
-};
-
 const AllProjects = () => {
   const projectsCtx = useContext(ProjectContext);
   const { colorMode } = useColorMode();
@@ -44,10 +28,27 @@ const AllProjects = () => {
         <Heading as="h1">Projects</Heading>
       </motion.div>
 
-      <motion.div variants={container} initial="hidden" animate="show">
+      <motion.div
+        variants={{
+          hidden: { opacity: 0 },
+          show: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.2,
+              delayChildren: 0.2,
+            },
+          },
+        }}
+        initial="hidden"
+        animate="show">
         <Box marginY={6}>
           {projectsCtx.projects.map((project) => (
-            <motion.div key={project.id} variants={item}>
+            <motion.div
+              key={project.id}
+              variants={{
+                hidden: { y: 50, opacity: 0 },
+                show: { y: 0, opacity: 1, transition: { ease: 'easeOut' } },
+              }}>
               <ChakraLink href={project.link} _hover={{ textDecoration: 'none' }} isExternal>
                 <HStack
                   spacing={6}

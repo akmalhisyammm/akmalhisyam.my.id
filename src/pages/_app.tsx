@@ -2,7 +2,6 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
-import { AnimatePresence } from 'framer-motion';
 import { AboutProvider } from 'contexts/about';
 import { ProjectProvider } from 'contexts/project';
 
@@ -11,7 +10,7 @@ import customTheme from 'styles/customTheme';
 
 import defaultSEOConfig from '../../next-seo.config';
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={customTheme}>
       <Head>
@@ -25,9 +24,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
       <AboutProvider>
         <ProjectProvider>
-          <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
-            <Component {...pageProps} key={router.route} />
-          </AnimatePresence>
+          <Component {...pageProps} />
         </ProjectProvider>
       </AboutProvider>
     </ChakraProvider>

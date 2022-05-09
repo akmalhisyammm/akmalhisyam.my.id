@@ -32,7 +32,7 @@ const Hero = () => {
             </Button>
           </Box>
 
-          <Image src="/avatar.png" alt="avatar" width={250} />
+          <Image src="/avatar.png" alt="akmalhisyam.my.id avatar" width={250} />
         </HStack>
       </motion.div>
     </Box>
