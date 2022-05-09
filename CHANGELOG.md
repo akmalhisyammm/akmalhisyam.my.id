@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/akmalhisyammm/akmalhisyam.my.id/compare/v1.0.0...v1.1.0) (2022-05-09)
+
+
+### Features
+
+* **components:** add animation in each component ([#5](https://github.com/akmalhisyammm/akmalhisyam.my.id/issues/5)) ([091cc8d](https://github.com/akmalhisyammm/akmalhisyam.my.id/commit/091cc8da1bf2760aafc3e8da7b8dd642d9fba19e))
+* **contexts:** add twitter in about provider ([1548a31](https://github.com/akmalhisyammm/akmalhisyam.my.id/commit/1548a3147b0dd433330be00c96e3acd277227ad9))
+
 ## 1.0.0 (2022-05-04)
 
 
