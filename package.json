@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && yarn format",
@@ -25,6 +26,8 @@
     "framer-motion": "^6",
     "next": "12.1.5",
     "next-pwa": "^5.5.2",
+    "next-seo": "^5.4.0",
+    "next-sitemap": "^2.5.20",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.3.1"
