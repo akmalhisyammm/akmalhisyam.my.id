@@ -11,9 +11,9 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="manifest" href="manifest.json" />
-          <meta name="application-name" content="akmalhisyam.my.id" />
+          <meta name="application-name" content="Akmal Hisyam" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta name="apple-mobile-web-app-title" content="akmalhisyam.my.id" />
+          <meta name="apple-mobile-web-app-title" content="Akmal Hisyam" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="theme-color" content="#FFFFFF" />
         </Head>
