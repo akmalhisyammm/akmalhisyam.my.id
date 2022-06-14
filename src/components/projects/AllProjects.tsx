@@ -59,7 +59,7 @@ const AllProjects = () => {
                   cursor="pointer"
                   transition="0.2s ease-out"
                   _hover={{
-                    transform: 'scale(1.04)',
+                    transform: 'scale(1.03)',
                     borderWidth: '3px',
                     borderColor: colorMode === 'light' ? 'blue.500' : 'blue.200',
                   }}>

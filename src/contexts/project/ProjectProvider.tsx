@@ -13,7 +13,8 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
     {
       id: 'P001',
       name: 'COVID-19 Statistic',
-      description: 'COVID-19 statistics web app.',
+      description:
+        'Site to monitor COVID-19 statistical data globally or based on selected country.',
       type: 'Personal',
       icon_path: '/projects/icons/covid-19.png',
       preview_path: '/projects/previews/covid-19_preview.png',
@@ -32,7 +33,7 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
     {
       id: 'P002',
       name: 'RikuMovies',
-      description: 'Movie collection web app.',
+      description: 'Site to display and search list of movies from The Movies Database (TMDB) API.',
       type: 'Personal',
       icon_path: '/projects/icons/rikumovies.png',
       preview_path: '/projects/previews/rikumovies_preview.png',
@@ -51,7 +52,8 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
     {
       id: 'P003',
       name: 'KlikDarurat',
-      description: 'Emergency services app.',
+      description:
+        'Application to assist Indonesian citizens in finding emergency service contacts and the nearest emergency service location based on their current location.',
       type: 'Group',
       icon_path: '/projects/icons/klikdarurat.png',
       preview_path: '/projects/previews/klikdarurat_preview.png',
@@ -70,7 +72,8 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
     {
       id: 'P004',
       name: 'Gamma-5',
-      description: 'Web-based expert system to determine college majors based on personality.',
+      description:
+        'Web-based expert system to assist prospective students in determining college majors based on their personality',
       type: 'Group',
       icon_path: '/projects/icons/gamma-5.png',
       preview_path: '/projects/previews/gamma-5_preview.png',
@@ -89,7 +92,7 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
     {
       id: 'P005',
       name: 'Random Quote Generator',
-      description: 'Random quote generator web app.',
+      description: 'Site to generate random quotes from Quotable.io API.',
       type: 'Personal',
       icon_path: '/projects/icons/random-quote-generator.png',
       preview_path: '/projects/previews/random-quote-generator_preview.png',
@@ -108,7 +111,7 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
     {
       id: 'P006',
       name: 'Countdown Timer',
-      description: 'Simple countdown timer web app.',
+      description: 'Site to countdown according to a predetermined time.',
       type: 'Personal',
       icon_path: '/projects/icons/countdown-timer.png',
       preview_path: '/projects/previews/countdown-timer_preview.png',
