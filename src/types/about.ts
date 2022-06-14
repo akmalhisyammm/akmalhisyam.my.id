@@ -12,8 +12,9 @@ interface SocialMediaData {
 }
 
 export interface AboutData {
-  photo: string;
+  photo_path: string;
   summary: string[];
   favorite_tech_stack: FavoriteTechStackData[];
   social_media: SocialMediaData[];
+  resume_link: string;
 }

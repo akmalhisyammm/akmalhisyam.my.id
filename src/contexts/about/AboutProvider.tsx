@@ -22,7 +22,7 @@ type AboutProviderProps = {
 
 const AboutProvider = ({ children }: AboutProviderProps) => {
   const about: AboutData = {
-    photo: '/about/akmal.jpg',
+    photo_path: '/about/akmal.jpg',
     summary: [
       "Hi! I'm Muhammad Akmal Hisyam, you can call me Akmal. I'm a third-year Informatics\
       student at Multimedia Nusantara University. I started learning web development in\
@@ -85,6 +85,7 @@ const AboutProvider = ({ children }: AboutProviderProps) => {
         link: 'mailto:akmalhisyam11@gmail.com',
       },
     ],
+    resume_link: 'https://drive.google.com/file/d/1foKxiUSFLc7hwLodudIzROcajI-Qc1-B/view',
   };
 
   return <AboutContext.Provider value={{ about }}>{children}</AboutContext.Provider>;

@@ -7,10 +7,11 @@ interface Context {
 
 const AboutContext = createContext<Context>({
   about: {
-    photo: '',
+    photo_path: '',
     summary: [],
     favorite_tech_stack: [],
     social_media: [],
+    resume_link: '',
   },
 });
 
