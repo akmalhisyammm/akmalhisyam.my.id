@@ -1,9 +1,13 @@
-import { Box, Button, Heading, HStack, Image, Text } from '@chakra-ui/react';
+import { Box, Button, Heading, HStack, Image, Link as ChakraLink, Text } from '@chakra-ui/react';
+import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { FaChevronRight } from 'react-icons/fa';
+import { RiArticleLine } from 'react-icons/ri';
+import { AboutContext } from 'contexts/about';
 
 const Hero = () => {
+  const aboutCtx = useContext(AboutContext);
   const router = useRouter();
 
   return (
@@ -15,21 +19,34 @@ const Hero = () => {
         <HStack
           justifyContent="space-between"
           alignItems="center"
-          flexDirection={['column-reverse', 'row', 'row']}
+          flexDirection={['column-reverse', 'column-reverse', 'row']}
           marginBottom={8}>
-          <Box textAlign={['center', 'left', 'left']} marginTop={[4, 0, 0]} marginRight={[0, 4, 4]}>
+          <Box
+            textAlign={['center', 'center', 'left']}
+            marginTop={[4, 4, 0]}
+            marginRight={[0, 0, 4]}>
             <Heading as="h1" marginBottom={1}>
               Hi! I&apos;m Akmal.
             </Heading>
             <Text>Informatics student at Multimedia Nusantara University.</Text>
-            <Button
-              colorScheme="blue"
-              borderRadius="full"
-              marginY={4}
-              rightIcon={<FaChevronRight />}
-              onClick={() => router.replace('/about')}>
-              Learn about me
-            </Button>
+            <HStack marginY={4} justifyContent={['center', 'center', 'start']}>
+              <ChakraLink
+                href={aboutCtx.about.resume_link}
+                _hover={{ textDecoration: 'none' }}
+                isExternal>
+                <Button colorScheme="blue" borderRadius="full" leftIcon={<RiArticleLine />}>
+                  Resume
+                </Button>
+              </ChakraLink>
+              <Button
+                colorScheme="blue"
+                variant="outline"
+                borderRadius="full"
+                rightIcon={<FaChevronRight />}
+                onClick={() => router.replace('/about')}>
+                Learn about me
+              </Button>
+            </HStack>
           </Box>
 
           <Image src="/avatar.png" alt="akmalhisyam.my.id avatar" width={250} />
