@@ -82,7 +82,7 @@ const AboutProvider = ({ children }: AboutProviderProps) => {
       {
         name: 'Email',
         icon: SiGmail,
-        link: 'mailto:akmalhisyam11@gmail.com',
+        link: 'mailto:akmalhisyam.id@gmail.com',
       },
     ],
     resume_link: 'https://drive.google.com/file/d/1foKxiUSFLc7hwLodudIzROcajI-Qc1-B/view',
