@@ -19,7 +19,7 @@ const Header = () => {
       zIndex={5}>
       <Flex as="nav" maxWidth={800} height="full" margin="0 auto" alignItems="center" padding={4}>
         <HStack spacing={[4, 8, 8]}>
-          <Link href="/" passHref>
+          <Link href="/" legacyBehavior passHref>
             {router.pathname === '/' ? (
               <ChakraLink
                 color={colorMode === 'light' ? 'blue.500' : 'blue.200'}
@@ -32,7 +32,7 @@ const Header = () => {
               </ChakraLink>
             )}
           </Link>
-          <Link href="/projects" passHref>
+          <Link href="/projects" legacyBehavior passHref>
             {router.pathname === '/projects' ? (
               <ChakraLink
                 color={colorMode === 'light' ? 'blue.500' : 'blue.200'}
@@ -45,7 +45,7 @@ const Header = () => {
               </ChakraLink>
             )}
           </Link>
-          <Link href="/about" passHref>
+          <Link href="/about" legacyBehavior passHref>
             {router.pathname === '/about' ? (
               <ChakraLink
                 color={colorMode === 'light' ? 'blue.500' : 'blue.200'}

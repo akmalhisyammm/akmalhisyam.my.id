@@ -39,7 +39,7 @@ const Footer = () => {
 
       <Text>
         2022 &bull;{' '}
-        <Link href="/about" passHref>
+        <Link href="/about" legacyBehavior passHref>
           <ChakraLink _hover={{ color: colorMode === 'light' ? 'blue.500' : 'blue.200' }}>
             Muhammad Akmal Hisyam
           </ChakraLink>

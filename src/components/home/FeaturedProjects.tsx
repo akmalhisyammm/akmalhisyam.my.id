@@ -98,7 +98,7 @@ const FeaturedProjects = () => {
           colorScheme="blue"
           variant="outline"
           borderRadius="full"
-          isFullWidth
+          width="full"
           onClick={() => router.replace('/projects')}>
           View all projects
         </Button>
