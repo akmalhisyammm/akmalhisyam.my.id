@@ -12,8 +12,8 @@ import {
   SiTwitter,
   SiTypescript,
 } from 'react-icons/si';
-import { AboutData } from 'types/about';
 
+import { AboutData } from 'types/about';
 import AboutContext from './About.context';
 
 type AboutProviderProps = {

@@ -1,14 +1,15 @@
 import { NextSeo } from 'next-seo';
-import { baseUrl } from 'constants/baseUrl';
-import Layout from 'components/layout';
+
+import { BASE_URL } from 'constants/url';
 import { FavoriteTS, Summary } from 'components/about';
+import Layout from 'components/layout';
 
 const About = () => {
   return (
     <Layout>
       <NextSeo
         title="About"
-        canonical={`${baseUrl}/about`}
+        canonical={`${BASE_URL}/about`}
         openGraph={{
           title: 'About | Akmal Hisyam',
           description: "Muhammad Akmal Hisyam's about",

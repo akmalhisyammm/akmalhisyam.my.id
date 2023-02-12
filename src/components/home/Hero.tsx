@@ -2,9 +2,10 @@ import { Box, Button, Heading, HStack, Image, Link as ChakraLink, Text } from '@
 import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
+
+import { AboutContext } from 'contexts/about';
 import { FaChevronRight } from 'react-icons/fa';
 import { RiArticleLine } from 'react-icons/ri';
-import { AboutContext } from 'contexts/about';
 
 const Hero = () => {
   const aboutCtx = useContext(AboutContext);

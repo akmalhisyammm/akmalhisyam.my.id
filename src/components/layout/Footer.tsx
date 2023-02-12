@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { useContext } from 'react';
 import Link from 'next/link';
+
 import { AboutContext } from 'contexts/about';
 
 const Footer = () => {

@@ -13,6 +13,7 @@ import {
 import { useContext } from 'react';
 import { FaChevronRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+
 import { ProjectContext } from 'contexts/project';
 
 const AllProjects = () => {

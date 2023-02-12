@@ -13,6 +13,7 @@ import {
 import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
+
 import { ProjectContext } from 'contexts/project';
 
 const FeaturedProjects = () => {

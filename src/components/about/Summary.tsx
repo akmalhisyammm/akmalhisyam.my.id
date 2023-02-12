@@ -1,6 +1,7 @@
 import { Box, Heading, HStack, Image, Text } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { motion } from 'framer-motion';
+
 import { AboutContext } from 'contexts/about';
 
 const Summary = () => {

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { SiChakraui, SiIonic, SiMaterialui, SiNextdotjs, SiReact } from 'react-icons/si';
-import { ProjectData } from 'types/project';
 
+import { ProjectData } from 'types/project';
 import ProjectContext from './Project.context';
 
 type ProjectProviderProps = {
