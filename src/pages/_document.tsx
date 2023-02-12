@@ -1,8 +1,18 @@
-import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document';
+
+import { UMAMI_WEBSITE_ID, UMAMI_WEBSITE_URL } from 'constants/analytics';
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx);
+
     return { ...initialProps };
   }
 
@@ -16,6 +26,14 @@ class MyDocument extends Document {
           <meta name="apple-mobile-web-app-title" content="Akmal Hisyam" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="theme-color" content="#FFFFFF" />
+          <script
+            async
+            defer
+            data-website-id={UMAMI_WEBSITE_ID}
+            src={UMAMI_WEBSITE_URL}
+            data-cache="true"
+            data-domains="akmalhisyam.my.id"
+          />
         </Head>
 
         <body>
