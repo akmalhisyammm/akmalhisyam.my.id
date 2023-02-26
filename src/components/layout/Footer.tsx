@@ -39,7 +39,7 @@ const Footer = () => {
       </HStack>
 
       <Text>
-        2022 &bull;{' '}
+        {new Date().getFullYear()} &bull;{' '}
         <Link href="/about" legacyBehavior passHref>
           <ChakraLink _hover={{ color: colorMode === 'light' ? 'blue.500' : 'blue.200' }}>
             Muhammad Akmal Hisyam
