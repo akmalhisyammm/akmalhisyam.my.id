@@ -1,38 +1,44 @@
-import { ReactNode } from 'react';
 import {
   SiChakraui,
+  SiFirebase,
   SiGithub,
   SiGmail,
   SiInstagram,
-  SiIonic,
   SiLinkedin,
   SiNextdotjs,
-  SiNodedotjs,
   SiReact,
   SiTwitter,
   SiTypescript,
 } from 'react-icons/si';
 
-import { AboutData } from 'types/about';
 import AboutContext from './About.context';
+
+import type { ReactNode } from 'react';
+import type { IAbout } from '@/types/about';
 
 type AboutProviderProps = {
   children: ReactNode;
 };
 
 const AboutProvider = ({ children }: AboutProviderProps) => {
-  const about: AboutData = {
-    photo_path: '/about/akmal.jpg',
-    summary: [
-      "Hi! I'm Muhammad Akmal Hisyam, you can call me Akmal. I'm a third-year Informatics\
-      student at Multimedia Nusantara University. I started learning web development in\
-      my second year, especially front-end development.",
+  const about: IAbout = {
+    photo: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/about/akmal.jpg',
+    avatar: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/about/avatar.png',
+    resume: 'https://drive.google.com/file/d/1IIPyM3Tiw_aZHp6KNXgVviB8rrcQV2AL/view?usp=sharing',
+    headline: 'Informatics student at Multimedia Nusantara University.',
+    summaries: [
+      "Hi! I'm Muhammad Akmal Hisyam, you can call me Akmal. I started learning web development\
+      at the end of 2020, especially front-end development.",
       "Currently, I'm learning React framework and its ecosystem. I usually take online\
       courses and understand code from other people's projects to find best practices in\
       writing code and improve my skills. I enjoy learning something that I'm passionate\
       about.",
     ],
-    favorite_tech_stack: [
+    favoriteTechStacks: [
+      {
+        name: 'Next.js',
+        icon: SiNextdotjs,
+      },
       {
         name: 'React',
         icon: SiReact,
@@ -42,27 +48,19 @@ const AboutProvider = ({ children }: AboutProviderProps) => {
         icon: SiTypescript,
       },
       {
-        name: 'Ionic',
-        icon: SiIonic,
-      },
-      {
-        name: 'Next.js',
-        icon: SiNextdotjs,
-      },
-      {
         name: 'Chakra UI',
         icon: SiChakraui,
       },
       {
-        name: 'Node.js',
-        icon: SiNodedotjs,
+        name: 'Firebase',
+        icon: SiFirebase,
       },
     ],
-    social_media: [
+    socials: [
       {
         name: 'LinkedIn',
         icon: SiLinkedin,
-        link: 'https://www.linkedin.com/in/muhammadakmalhisyam',
+        link: 'https://www.linkedin.com/in/muhammad-akmal-hisyam',
       },
       {
         name: 'GitHub',
@@ -85,7 +83,6 @@ const AboutProvider = ({ children }: AboutProviderProps) => {
         link: 'mailto:akmalhisyam.id@gmail.com',
       },
     ],
-    resume_link: 'https://drive.google.com/file/d/1foKxiUSFLc7hwLodudIzROcajI-Qc1-B/view',
   };
 
   return <AboutContext.Provider value={{ about }}>{children}</AboutContext.Provider>;

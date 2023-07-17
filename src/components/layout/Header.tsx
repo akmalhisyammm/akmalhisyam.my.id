@@ -5,8 +5,8 @@ import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
-  const router = useRouter();
   const { colorMode } = useColorMode();
+  const router = useRouter();
 
   return (
     <Box

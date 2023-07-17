@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import {
   Box,
   HStack,
@@ -7,14 +8,13 @@ import {
   Tooltip,
   useColorMode,
 } from '@chakra-ui/react';
-import { useContext } from 'react';
 import Link from 'next/link';
 
-import { AboutContext } from 'contexts/about';
+import { AboutContext } from '@/contexts/about';
 
 const Footer = () => {
-  const aboutCtx = useContext(AboutContext);
   const { colorMode } = useColorMode();
+  const aboutCtx = useContext(AboutContext);
 
   return (
     <Box
@@ -25,11 +25,11 @@ const Footer = () => {
       borderTopWidth={1}
       paddingY={4}>
       <HStack justifyContent="center" spacing={3}>
-        {aboutCtx.about.social_media.map((sm) => (
-          <Tooltip key={sm.name} label={sm.name}>
-            <ChakraLink href={sm.link} isExternal>
+        {aboutCtx.about.socials.map((social) => (
+          <Tooltip key={social.name} label={social.name}>
+            <ChakraLink href={social.link} isExternal>
               <Icon
-                as={sm.icon}
+                as={social.icon}
                 fontSize={18}
                 _hover={{ color: colorMode === 'light' ? 'blue.500' : 'blue.200' }}
               />

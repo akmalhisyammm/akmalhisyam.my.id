@@ -2,9 +2,10 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 
-import { AboutProvider } from 'contexts/about';
-import { ProjectProvider } from 'contexts/project';
-import customTheme from 'styles/customTheme';
+import { AboutProvider } from '@/contexts/about';
+import { ProjectProvider } from '@/contexts/project';
+import customTheme from '@/styles/customTheme';
+
 import defaultSEOConfig from '../../next-seo.config';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {

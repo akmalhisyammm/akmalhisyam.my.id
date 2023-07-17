@@ -12,7 +12,7 @@ const defaultSEOConfig = {
     images: [
       {
         url: '/og-image.png',
-        alt: 'akmalhisyam.my.id og-image',
+        alt: 'akmalhisyam.my.id open graph',
       },
     ],
     site_name: 'akmalhisyam.my.id',

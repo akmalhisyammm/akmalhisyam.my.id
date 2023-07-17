@@ -1,20 +1,11 @@
-import { IconType } from 'react-icons';
+import type { ISocialMedia, ITechStack } from './globals';
 
-interface FavoriteTechStackData {
-  name: string;
-  icon: IconType;
-}
-
-interface SocialMediaData {
-  name: string;
-  icon: IconType;
-  link: string;
-}
-
-export interface AboutData {
-  photo_path: string;
-  summary: string[];
-  favorite_tech_stack: FavoriteTechStackData[];
-  social_media: SocialMediaData[];
-  resume_link: string;
+export interface IAbout {
+  photo: string;
+  avatar: string;
+  resume: string;
+  headline: string;
+  summaries: string[];
+  favoriteTechStacks: ITechStack[];
+  socials: ISocialMedia[];
 }

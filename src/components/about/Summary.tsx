@@ -1,8 +1,8 @@
-import { Box, Heading, HStack, Image, Text } from '@chakra-ui/react';
 import { useContext } from 'react';
+import { Box, Heading, HStack, Image, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-import { AboutContext } from 'contexts/about';
+import { AboutContext } from '@/contexts/about';
 
 const Summary = () => {
   const aboutCtx = useContext(AboutContext);
@@ -28,14 +28,14 @@ const Summary = () => {
           alignItems="flex-start"
           spacing={[0, 4, 4]}>
           <Box marginY={[4, 0, 0]}>
-            {aboutCtx.about.summary.map((summary, idx) => (
+            {aboutCtx.about.summaries.map((summary, idx) => (
               <Text key={idx} marginBottom={2}>
                 {summary}
               </Text>
             ))}
           </Box>
           <Image
-            src={aboutCtx.about.photo_path}
+            src={aboutCtx.about.photo}
             alt="Muhammad Akmal Hisyam's photo"
             width={['full', 250, 250]}
             borderRadius={24}

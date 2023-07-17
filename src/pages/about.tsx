@@ -1,8 +1,8 @@
 import { NextSeo } from 'next-seo';
 
-import { BASE_URL } from 'constants/url';
-import { FavoriteTS, Summary } from 'components/about';
-import Layout from 'components/layout';
+import { BASE_URL } from '@/constants/url';
+import { FavoriteTS, Summary } from '@/components/about';
+import Layout from '@/components/layout';
 
 const About = () => {
   return (

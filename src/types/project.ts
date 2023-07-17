@@ -1,17 +1,13 @@
-import { IconType } from 'react-icons';
+import type { ITechStack } from './globals';
 
-interface TechStackData {
-  name: string;
-  icon: IconType;
-}
-
-export interface ProjectData {
+export interface IProject {
   id: string;
   name: string;
   description: string;
   type: 'Personal' | 'Group';
-  tech_stack: TechStackData[];
-  icon_path: string;
-  preview_path: string;
+  logo: string;
+  preview: string;
+  techStacks: ITechStack[];
   link: string;
+  isFeatured: boolean;
 }

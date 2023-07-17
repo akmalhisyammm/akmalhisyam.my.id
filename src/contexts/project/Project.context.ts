@@ -1,9 +1,9 @@
 import { createContext } from 'react';
 
-import { ProjectData } from 'types/project';
+import type { IProject } from '@/types/project';
 
 interface Context {
-  projects: ProjectData[];
+  projects: IProject[];
 }
 
 const ProjectContext = createContext<Context>({ projects: [] });

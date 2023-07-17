@@ -7,7 +7,7 @@ import Document, {
   NextScript,
 } from 'next/document';
 
-import { UMAMI_WEBSITE_ID, UMAMI_WEBSITE_URL } from 'constants/analytics';
+import { UMAMI_WEBSITE_ID, UMAMI_WEBSITE_URL } from '@/constants/analytics';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {

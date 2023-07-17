@@ -1,15 +1,15 @@
-import { Box, Button, Heading, HStack, Image, Link as ChakraLink, Text } from '@chakra-ui/react';
 import { useContext } from 'react';
+import { Box, Button, Heading, HStack, Image, Link as ChakraLink, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { motion } from 'framer-motion';
-
-import { AboutContext } from 'contexts/about';
 import { FaChevronRight } from 'react-icons/fa';
 import { RiArticleLine } from 'react-icons/ri';
+import { motion } from 'framer-motion';
+
+import { AboutContext } from '@/contexts/about';
 
 const Hero = () => {
-  const aboutCtx = useContext(AboutContext);
   const router = useRouter();
+  const aboutCtx = useContext(AboutContext);
 
   return (
     <Box>
@@ -29,10 +29,10 @@ const Hero = () => {
             <Heading as="h1" marginBottom={1}>
               Hi! I&apos;m Akmal.
             </Heading>
-            <Text>Informatics student at Multimedia Nusantara University.</Text>
+            <Text>{aboutCtx.about.headline}</Text>
             <HStack marginY={4} justifyContent={['center', 'center', 'start']}>
               <ChakraLink
-                href={aboutCtx.about.resume_link}
+                href={aboutCtx.about.resume}
                 _hover={{ textDecoration: 'none' }}
                 isExternal>
                 <Button colorScheme="blue" borderRadius="full" leftIcon={<RiArticleLine />}>
@@ -50,7 +50,7 @@ const Hero = () => {
             </HStack>
           </Box>
 
-          <Image src="/avatar.png" alt="akmalhisyam.my.id avatar" width={250} />
+          <Image src={aboutCtx.about.avatar} alt="Akmal Hisyam's avatar" width={250} />
         </HStack>
       </motion.div>
     </Box>

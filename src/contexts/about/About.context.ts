@@ -1,18 +1,20 @@
 import { createContext } from 'react';
 
-import { AboutData } from 'types/about';
+import type { IAbout } from '@/types/about';
 
 interface Context {
-  about: AboutData;
+  about: IAbout;
 }
 
 const AboutContext = createContext<Context>({
   about: {
-    photo_path: '',
-    summary: [],
-    favorite_tech_stack: [],
-    social_media: [],
-    resume_link: '',
+    photo: '',
+    avatar: '',
+    resume: '',
+    headline: '',
+    summaries: [],
+    favoriteTechStacks: [],
+    socials: [],
   },
 });
 

@@ -1,8 +1,8 @@
-import { Box, Heading, HStack, Tooltip, Icon } from '@chakra-ui/react';
 import { useContext } from 'react';
+import { Box, Heading, HStack, Tooltip, Icon } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-import { AboutContext } from 'contexts/about';
+import { AboutContext } from '@/contexts/about';
 
 const FavoriteTS = () => {
   const aboutCtx = useContext(AboutContext);
@@ -32,7 +32,7 @@ const FavoriteTS = () => {
         initial="hidden"
         animate="show">
         <HStack marginTop={2} spacing={3}>
-          {aboutCtx.about.favorite_tech_stack.map((fts, idx) => (
+          {aboutCtx.about.favoriteTechStacks.map((fts, idx) => (
             <motion.div
               key={idx}
               variants={{
