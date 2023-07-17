@@ -12,7 +12,7 @@ const Projects = () => {
         canonical={`${BASE_URL}/projects`}
         openGraph={{
           title: 'Projects | Akmal Hisyam',
-          description: "Muhammad Akmal Hisyam's projects",
+          description: "Akmal Hisyam's projects",
         }}
       />
 

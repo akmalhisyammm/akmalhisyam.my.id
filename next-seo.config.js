@@ -3,16 +3,16 @@ const defaultSEOConfig = {
   title: undefined,
   titleTemplate: '%s | Akmal Hisyam',
   defaultTitle: 'Akmal Hisyam',
-  description: "Muhammad Akmal Hisyam's personal site",
+  description: "Akmal Hisyam's personal site",
   canonical: 'https://akmalhisyam.my.id',
   openGraph: {
     url: 'https://akmalhisyam.my.id',
     title: 'Akmal Hisyam',
-    description: "Muhammad Akmal Hisyam's personal site",
+    description: "Akmal Hisyam's personal site",
     images: [
       {
-        url: '/og-image.png',
-        alt: 'akmalhisyam.my.id open graph',
+        url: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/about/og-image.png',
+        alt: "Akmal Hisyam's og image",
       },
     ],
     site_name: 'akmalhisyam.my.id',

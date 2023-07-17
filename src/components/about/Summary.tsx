@@ -36,7 +36,7 @@ const Summary = () => {
           </Box>
           <Image
             src={aboutCtx.about.photo}
-            alt="Muhammad Akmal Hisyam's photo"
+            alt="Akmal Hisyam's photo"
             width={['full', 250, 250]}
             borderRadius={24}
           />
