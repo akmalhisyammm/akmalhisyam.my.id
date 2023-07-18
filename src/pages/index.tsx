@@ -1,11 +1,11 @@
-import { FeaturedProjects, Hero } from '@/components/home';
-import Layout from '@/components/layout';
+import { Layout } from '@/components/layouts';
+import { Hero, ProjectGrid } from '@/components/organisms';
 
 const Home = () => {
   return (
     <Layout>
       <Hero />
-      <FeaturedProjects />
+      <ProjectGrid />
     </Layout>
   );
 };
