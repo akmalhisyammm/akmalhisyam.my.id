@@ -1,14 +1,16 @@
 import { useContext } from 'react';
-import { Box, Button, Heading, HStack, Image, Link as ChakraLink, Text } from '@chakra-ui/react';
+import { Box, Button, HStack, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { FaChevronRight } from 'react-icons/fa';
 import { RiArticleLine } from 'react-icons/ri';
 import { motion } from 'framer-motion';
 
 import { AboutContext } from '@/contexts/about';
+import { ChakraHeading, ChakraLink, NextImage } from '@/components/atoms';
 
 const Hero = () => {
   const router = useRouter();
+
   const aboutCtx = useContext(AboutContext);
 
   return (
@@ -21,20 +23,15 @@ const Hero = () => {
           justifyContent="space-between"
           alignItems="center"
           flexDirection={['column-reverse', 'column-reverse', 'row']}
-          marginBottom={8}>
-          <Box
-            textAlign={['center', 'center', 'left']}
-            marginTop={[4, 4, 0]}
-            marginRight={[0, 0, 4]}>
-            <Heading as="h1" marginBottom={1}>
-              Hi! I&apos;m Akmal.
-            </Heading>
+          marginBottom={8}
+          spacing={[0, 0, 4]}>
+          <Box textAlign={['center', 'center', 'left']} marginTop={[4, 4, 0]}>
+            <ChakraHeading as="h2" size="2xl" marginBottom={1}>
+              Hello, I&apos;m Akmal.
+            </ChakraHeading>
             <Text>{aboutCtx.about.headline}</Text>
             <HStack marginY={4} justifyContent={['center', 'center', 'start']}>
-              <ChakraLink
-                href={aboutCtx.about.resume}
-                _hover={{ textDecoration: 'none' }}
-                isExternal>
+              <ChakraLink href={aboutCtx.about.resume} _hover={{ textDecoration: 'none' }}>
                 <Button colorScheme="blue" borderRadius="full" leftIcon={<RiArticleLine />}>
                   Resume
                 </Button>
@@ -50,7 +47,14 @@ const Hero = () => {
             </HStack>
           </Box>
 
-          <Image src={aboutCtx.about.avatar} alt="Akmal Hisyam's avatar" width={250} />
+          <Box as="figure">
+            <NextImage
+              src={aboutCtx.about.avatar}
+              alt="Akmal Hisyam's avatar"
+              width={250}
+              height={250}
+            />
+          </Box>
         </HStack>
       </motion.div>
     </Box>

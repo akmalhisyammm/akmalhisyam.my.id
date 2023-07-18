@@ -1,0 +1,41 @@
+import { useState } from 'react';
+import Image from 'next/image';
+
+type NextImageProps = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  [key: string]: unknown;
+};
+
+const NextImage = ({ src, alt, width, height, ...rest }: NextImageProps) => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      decoding="async"
+      onLoadingComplete={() => setIsLoading(false)}
+      priority
+      unoptimized
+      style={{
+        filter: isLoading ? 'blur(20px)' : 'blur(0)',
+        transitionProperty:
+          'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
+        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        transitionDuration: '500ms',
+        borderRadius: 24,
+        backgroundColor: isLoading ? '#3182ce' : undefined,
+        color: isLoading ? '#3182ce' : undefined,
+        margin: '0 auto',
+      }}
+      {...rest}
+    />
+  );
+};
+
+export default NextImage;

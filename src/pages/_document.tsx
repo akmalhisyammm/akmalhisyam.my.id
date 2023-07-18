@@ -1,10 +1,10 @@
 import Document, {
-  DocumentContext,
-  DocumentInitialProps,
   Head,
   Html,
   Main,
   NextScript,
+  type DocumentContext,
+  type DocumentInitialProps,
 } from 'next/document';
 
 import { UMAMI_WEBSITE_ID, UMAMI_WEBSITE_URL } from '@/constants/analytics';
