@@ -11,28 +11,29 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 
-import AboutContext from './About.context';
+import { AboutContext } from './AboutContext';
+import { IMAGE_URL } from '@/constants/url';
 
-import type { ReactNode } from 'react';
 import type { IAbout } from '@/types/about';
 
 type AboutProviderProps = {
-  children: ReactNode;
+  children: React.ReactNode;
 };
 
-const AboutProvider = ({ children }: AboutProviderProps) => {
+export const AboutProvider = ({ children }: AboutProviderProps) => {
   const about: IAbout = {
-    photo: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/about/akmal.jpg',
-    avatar: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/about/avatar.png',
-    resume: 'https://drive.google.com/file/d/1IIPyM3Tiw_aZHp6KNXgVviB8rrcQV2AL/view?usp=sharing',
-    headline: 'Informatics student at Multimedia Nusantara University.',
+    photo: `${IMAGE_URL}/about/akmal.jpg`,
+    avatar: `${IMAGE_URL}/about/avatar.png`,
+    resume: 'https://drive.google.com/file/d/14_5Lm34faG40OVfLCNkue4Ao0MJUomTi/view?usp=sharing',
+    headline: 'Currently working as a Freelance Front-End Developer.',
     summaries: [
-      "Hi! I'm Muhammad Akmal Hisyam, you can call me Akmal. I started learning web development\
-      at the end of 2020, especially front-end development.",
-      "Currently, I'm learning React framework and its ecosystem. I usually take online\
-      courses and understand code from other people's projects to find best practices in\
-      writing code and improve my skills. I enjoy learning something that I'm passionate\
-      about.",
+      "Hi! I'm Muhammad Akmal Hisyam, you can call me Akmal. I have a strong interest in exploring\
+      web and mobile app development. I started learning web development at the end of 2020,\
+      especially front-end development. After that, I started learning mobile application\
+      development at the end of 2021.",
+      "Currently, I'm learning React framework and its ecosystem. I usually take online courses\
+      and understand code from other developers' projects to find best practices in writing code\
+      and improve my skills. I enjoy learning something that I'm passionate about.",
     ],
     favoriteTechStacks: [
       {
@@ -87,5 +88,3 @@ const AboutProvider = ({ children }: AboutProviderProps) => {
 
   return <AboutContext.Provider value={{ about }}>{children}</AboutContext.Provider>;
 };
-
-export default AboutProvider;

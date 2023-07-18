@@ -9,4 +9,8 @@ const withPWA = require('next-pwa')({
 /** @type {import('next').NextConfig} */
 module.exports = withPWA({
   reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    domains: ['https://akmalhisyam.s3.ap-southeast-1.amazonaws.com'],
+  },
 });

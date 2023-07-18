@@ -6,6 +6,4 @@ interface Context {
   projects: IProject[];
 }
 
-const ProjectContext = createContext<Context>({ projects: [] });
-
-export default ProjectContext;
+export const ProjectContext = createContext<Context>({ projects: [] });

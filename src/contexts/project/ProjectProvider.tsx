@@ -12,25 +12,24 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 
-import ProjectContext from './Project.context';
+import { ProjectContext } from './ProjectContext';
+import { IMAGE_URL } from '@/constants/url';
 
-import type { ReactNode } from 'react';
 import type { IProject } from '@/types/project';
 
 type ProjectProviderProps = {
-  children: ReactNode;
+  children: React.ReactNode;
 };
 
-const ProjectProvider = ({ children }: ProjectProviderProps) => {
+export const ProjectProvider = ({ children }: ProjectProviderProps) => {
   const projects: IProject[] = [
     {
       id: 'P001',
       name: 'Countdown Timer',
       description: 'Site to countdown according to a predetermined time.',
       type: 'Personal',
-      logo: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/icons/countdown-timer.png',
-      preview:
-        'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/previews/countdown-timer_preview.png',
+      logo: `${IMAGE_URL}/projects/icons/countdown-timer.png`,
+      preview: `${IMAGE_URL}/projects/previews/countdown-timer_preview.png`,
       techStacks: [
         {
           name: 'React',
@@ -53,9 +52,8 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
       name: 'Random Quote Generator',
       description: 'Site to generate random quotes from Quotable.io API.',
       type: 'Personal',
-      logo: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/icons/random-quote-generator.png',
-      preview:
-        'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/previews/random-quote-generator_preview.png',
+      logo: `${IMAGE_URL}/projects/icons/random-quote-generator.png`,
+      preview: `${IMAGE_URL}/projects/previews/random-quote-generator_preview.png`,
       techStacks: [
         {
           name: 'React',
@@ -79,9 +77,8 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
       description:
         'Web-based expert system to assist prospective students in determining college majors based on their personality',
       type: 'Group',
-      logo: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/icons/gamma-5.png',
-      preview:
-        'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/previews/gamma-5_preview.png',
+      logo: `${IMAGE_URL}/projects/icons/gamma-5.png`,
+      preview: `${IMAGE_URL}/projects/previews/gamma-5_preview.png`,
       techStacks: [
         {
           name: 'Next.js',
@@ -109,9 +106,8 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
       description:
         'Application to assist Indonesian citizens in finding emergency service contacts and the nearest emergency service location based on their current location.',
       type: 'Group',
-      logo: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/icons/klikdarurat.png',
-      preview:
-        'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/previews/klikdarurat_preview.png',
+      logo: `${IMAGE_URL}/projects/icons/klikdarurat.png`,
+      preview: `${IMAGE_URL}/projects/previews/klikdarurat_preview.png`,
       techStacks: [
         {
           name: 'Ionic',
@@ -138,9 +134,8 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
       name: 'Rikumovies',
       description: 'Site to display and search list of movies from The Movies Database (TMDB) API.',
       type: 'Personal',
-      logo: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/icons/rikumovies.png',
-      preview:
-        'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/previews/rikumovies_preview.png',
+      logo: `${IMAGE_URL}/projects/icons/rikumovies.png`,
+      preview: `${IMAGE_URL}/projects/previews/rikumovies_preview.png`,
       techStacks: [
         {
           name: 'Next.js',
@@ -164,9 +159,8 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
       description:
         'Site to assist organizer in creating, promoting, and selling tickets for their events.',
       type: 'Personal',
-      logo: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/icons/matsuri.png',
-      preview:
-        'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/previews/matsuri_preview.png',
+      logo: `${IMAGE_URL}/projects/icons/matsuri.png`,
+      preview: `${IMAGE_URL}/projects/previews/matsuri_preview.png`,
       techStacks: [
         {
           name: 'Next.js',
@@ -197,9 +191,8 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
       name: 'Gitpedia',
       description: 'Application to assist developers learn Git in an easy and fun way.',
       type: 'Personal',
-      logo: 'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/icons/gitpedia.png',
-      preview:
-        'https://akmalhisyam.s3.ap-southeast-1.amazonaws.com/projects/previews/gitpedia_preview.png',
+      logo: `${IMAGE_URL}/projects/icons/gitpedia.png`,
+      preview: `${IMAGE_URL}/projects/previews/gitpedia_preview.png`,
       techStacks: [
         {
           name: 'Ionic',
@@ -225,5 +218,3 @@ const ProjectProvider = ({ children }: ProjectProviderProps) => {
 
   return <ProjectContext.Provider value={{ projects }}>{children}</ProjectContext.Provider>;
 };
-
-export default ProjectProvider;

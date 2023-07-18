@@ -6,7 +6,7 @@ interface Context {
   about: IAbout;
 }
 
-const AboutContext = createContext<Context>({
+export const AboutContext = createContext<Context>({
   about: {
     photo: '',
     avatar: '',
@@ -17,5 +17,3 @@ const AboutContext = createContext<Context>({
     socials: [],
   },
 });
-
-export default AboutContext;
