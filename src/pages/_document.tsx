@@ -9,6 +9,8 @@ import Document, {
 
 import { UMAMI_WEBSITE_ID, UMAMI_WEBSITE_URL } from '@/constants/analytics';
 
+import i18nextConfig from '../../next-i18next.config';
+
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx);
@@ -18,7 +20,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang={i18nextConfig.i18n.defaultLocale}>
         <Head>
           <link rel="manifest" href="manifest.json" />
           <meta name="application-name" content="Akmal Hisyam" />

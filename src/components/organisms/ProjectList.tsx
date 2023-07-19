@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { Box } from '@chakra-ui/react';
+import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
 
 import { ProjectContext } from '@/contexts/project';
@@ -7,6 +8,8 @@ import { ChakraHeading } from '@/components/atoms';
 import { ProjectItem } from '@/components/molecules';
 
 const ProjectList = () => {
+  const { t } = useTranslation('projects');
+
   const projectsCtx = useContext(ProjectContext);
 
   return (
@@ -15,7 +18,9 @@ const ProjectList = () => {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: 'easeOut' }}>
-        <ChakraHeading as="h2">Projects</ChakraHeading>
+        <ChakraHeading as="h2" size="2xl" paddingBottom={2}>
+          {t('title')}
+        </ChakraHeading>
       </motion.div>
 
       <motion.div
@@ -31,7 +36,7 @@ const ProjectList = () => {
         }}
         initial="hidden"
         animate="show">
-        <Box marginY={6}>
+        <Box>
           {projectsCtx.projects
             .sort((a, b) => (b.id > a.id ? 1 : -1))
             .map((project) => (

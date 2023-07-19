@@ -7,6 +7,7 @@ import { ChakraLink } from '@/components/atoms';
 
 const Footer = () => {
   const { colorMode } = useColorMode();
+
   const aboutCtx = useContext(AboutContext);
 
   return (
@@ -16,6 +17,7 @@ const Footer = () => {
       width="full"
       textAlign="center"
       borderTopWidth={1}
+      borderColor={colorMode === 'light' ? 'gray.400' : 'gray.500'}
       paddingY={4}>
       <HStack justifyContent="center">
         {aboutCtx.about.socials.map((social) => (
@@ -31,12 +33,14 @@ const Footer = () => {
 
       <Text>
         {new Date().getFullYear()} &bull;{' '}
-        <Link href="/about" legacyBehavior passHref>
-          <ChakraLink
+        <Link href="/about" passHref>
+          <Text
+            as="span"
+            cursor="pointer"
             paddingY={3}
             _hover={{ color: colorMode === 'light' ? 'blue.500' : 'blue.200' }}>
             Muhammad Akmal Hisyam
-          </ChakraLink>
+          </Text>
         </Link>
       </Text>
     </Box>

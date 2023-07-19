@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Box, Button, SimpleGrid } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
 
 import { ProjectContext } from '@/contexts/project';
@@ -8,6 +9,8 @@ import { ChakraHeading } from '@/components/atoms';
 import { ProjectCard } from '@/components/molecules';
 
 const ProjectGrid = () => {
+  const { t } = useTranslation('home');
+
   const router = useRouter();
 
   const projectsCtx = useContext(ProjectContext);
@@ -18,8 +21,8 @@ const ProjectGrid = () => {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: 'easeOut', delay: 0.2 }}>
-        <ChakraHeading as="h3" size="lg">
-          Featured Projects
+        <ChakraHeading as="h3" size="lg" paddingBottom={1}>
+          {t('featured.projects.title')}
         </ChakraHeading>
       </motion.div>
 
@@ -61,7 +64,7 @@ const ProjectGrid = () => {
           borderRadius="full"
           width="full"
           onClick={() => router.replace('/projects')}>
-          View all projects
+          {t('featured.projects.cta')}
         </Button>
       </motion.div>
     </Box>
