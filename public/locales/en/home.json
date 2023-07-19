@@ -1,0 +1,18 @@
+{
+  "title": "Home",
+  "description": "Akmal Hisyam's personal site.",
+  "hero": {
+    "greeting": "Hello, I'm {{nickname}}.",
+    "headline": "Currently working as a {{occupation}}.",
+    "cta": {
+      "resume": "Resume",
+      "about": "Learn about me"
+    }
+  },
+  "featured": {
+    "projects": {
+      "title": "Featured Projects",
+      "cta": "View all projects"
+    }
+  }
+}
