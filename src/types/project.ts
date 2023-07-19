@@ -1,10 +1,10 @@
-import type { ITechStack } from './globals';
+import type { ILocale, ITechStack } from './globals';
 
 export interface IProject {
   id: string;
   name: string;
-  description: string;
-  type: 'Personal' | 'Group';
+  description: ILocale;
+  type: ILocale;
   logo: string;
   preview: string;
   techStacks: ITechStack[];

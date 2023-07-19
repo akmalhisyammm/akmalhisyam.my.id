@@ -17,7 +17,7 @@ const ProjectCard = ({ href, name, previewSrc, logoSrc }: ProjectCardProps) => {
   const logoRef = useRef<HTMLImageElement>(null);
 
   return (
-    <ChakraLink href={href} isExternal>
+    <ChakraLink href={href}>
       <Box
         borderRadius={18}
         overflow="hidden"

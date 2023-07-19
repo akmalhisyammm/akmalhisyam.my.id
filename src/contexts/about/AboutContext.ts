@@ -8,11 +8,16 @@ interface Context {
 
 export const AboutContext = createContext<Context>({
   about: {
+    name: '',
+    nickname: '',
+    occupation: '',
     photo: '',
     avatar: '',
     resume: '',
-    headline: '',
-    summaries: [],
+    summary: {
+      en: [],
+      id: [],
+    },
     favoriteTechStacks: [],
     socials: [],
   },

@@ -1,12 +1,36 @@
-import { Box, Flex, HStack, Text, useColorMode } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+  useColorMode,
+} from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { FaHome, FaRocket, FaUser } from 'react-icons/fa';
+import { MdTranslate } from 'react-icons/md';
+import { RiMenuFill, RiMoonFill, RiSunLine } from 'react-icons/ri';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
-import ThemeToggle from './ThemeToggle';
-
 const Header = () => {
-  const { colorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  const { t } = useTranslation('common');
+
   const router = useRouter();
+
+  const onToggleLanguageClick = (locale: string) => {
+    const { pathname, asPath, query } = router;
+    router.push({ pathname, query }, asPath, { locale });
+  };
+
+  const newLocale = router.locale === 'en' ? 'id' : 'en';
 
   return (
     <Box
@@ -18,63 +42,123 @@ const Header = () => {
       position="fixed"
       zIndex={5}>
       <Flex as="nav" maxWidth={800} height="full" margin="0 auto" alignItems="center" padding={4}>
-        <HStack spacing={[2, 4, 4]}>
-          <Link href="/" legacyBehavior passHref>
+        <HStack spacing={[2, 4, 4]} display={['none', 'flex', 'flex']}>
+          <Link href="/" passHref>
             {router.pathname === '/' ? (
               <Text
-                padding={3}
                 cursor="pointer"
+                padding={3}
                 color={colorMode === 'light' ? 'blue.500' : 'blue.200'}>
-                Home
+                {t('header.route.home')}
               </Text>
             ) : (
               <Text
-                padding={3}
                 cursor="pointer"
-                _hover={{ color: colorMode === 'light' ? 'blue.500' : 'blue.200' }}>
-                Home
+                padding={3}
+                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                {t('header.route.home')}
               </Text>
             )}
           </Link>
-          <Link href="/projects" legacyBehavior passHref>
+          <Link href="/projects" passHref>
             {router.pathname === '/projects' ? (
               <Text
-                padding={3}
                 cursor="pointer"
+                padding={3}
                 color={colorMode === 'light' ? 'blue.500' : 'blue.200'}>
-                Projects
+                {t('header.route.projects')}
               </Text>
             ) : (
               <Text
-                padding={3}
                 cursor="pointer"
-                _hover={{ color: colorMode === 'light' ? 'blue.500' : 'blue.200' }}>
-                Projects
+                padding={3}
+                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                {t('header.route.projects')}
               </Text>
             )}
           </Link>
-          <Link href="/about" legacyBehavior passHref>
+          <Link href="/about" passHref>
             {router.pathname === '/about' ? (
               <Text
-                padding={3}
                 cursor="pointer"
+                padding={3}
                 color={colorMode === 'light' ? 'blue.500' : 'blue.200'}>
-                About
+                {t('header.route.about')}
               </Text>
             ) : (
               <Text
-                padding={3}
                 cursor="pointer"
-                _hover={{ color: colorMode === 'light' ? 'blue.500' : 'blue.200' }}>
-                About
+                padding={3}
+                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                {t('header.route.about')}
               </Text>
             )}
           </Link>
         </HStack>
 
-        <Box marginLeft="auto">
-          <ThemeToggle />
-        </Box>
+        <Menu placement="bottom-end">
+          <MenuButton
+            as={IconButton}
+            aria-label="Menu Toggle"
+            display={['flex', 'none', 'none']}
+            borderRadius="full"
+            icon={<RiMenuFill />}
+          />
+          <MenuList>
+            {router.pathname === '/' ? (
+              <MenuItem color={colorMode === 'light' ? 'blue.500' : 'blue.200'} icon={<FaHome />}>
+                {t('header.route.home')}
+              </MenuItem>
+            ) : (
+              <MenuItem
+                icon={<FaHome />}
+                onClick={() => router.push('/')}
+                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                {t('header.route.home')}
+              </MenuItem>
+            )}
+            {router.pathname === '/projects' ? (
+              <MenuItem color={colorMode === 'light' ? 'blue.500' : 'blue.200'} icon={<FaRocket />}>
+                {t('header.route.projects')}
+              </MenuItem>
+            ) : (
+              <MenuItem
+                icon={<FaRocket />}
+                onClick={() => router.push('/projects')}
+                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                {t('header.route.projects')}
+              </MenuItem>
+            )}
+            {router.pathname === '/about' ? (
+              <MenuItem color={colorMode === 'light' ? 'blue.500' : 'blue.200'} icon={<FaUser />}>
+                {t('header.route.about')}
+              </MenuItem>
+            ) : (
+              <MenuItem
+                icon={<FaUser />}
+                onClick={() => router.push('/about')}
+                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                {t('header.route.about')}
+              </MenuItem>
+            )}
+          </MenuList>
+        </Menu>
+
+        <HStack marginLeft="auto">
+          <Button
+            aria-label="Language Toggle"
+            borderRadius="full"
+            leftIcon={<MdTranslate />}
+            onClick={() => onToggleLanguageClick(newLocale)}>
+            {newLocale.toUpperCase()}
+          </Button>
+          <IconButton
+            aria-label="Theme Toggle"
+            borderRadius="full"
+            icon={colorMode === 'light' ? <RiMoonFill /> : <RiSunLine />}
+            onClick={toggleColorMode}
+          />
+        </HStack>
       </Flex>
     </Box>
   );

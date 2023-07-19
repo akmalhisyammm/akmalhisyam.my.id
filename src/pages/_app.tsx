@@ -1,5 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { DefaultSeo } from 'next-seo';
+import { appWithTranslation } from 'next-i18next';
 
 import { AboutProvider } from '@/contexts/about';
 import { ProjectProvider } from '@/contexts/project';
@@ -23,4 +24,4 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default MyApp;
+export default appWithTranslation(MyApp);
