@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Container,
   Flex,
   HStack,
   IconButton,
@@ -42,125 +43,129 @@ const Header = () => {
       backdropFilter="blur(10px)"
       position="fixed"
       zIndex={5}>
-      <Flex as="nav" maxWidth={800} height="full" margin="0 auto" alignItems="center" padding={4}>
-        <HStack spacing={[2, 4, 4]} display={['none', 'flex', 'flex']}>
-          <NextLink href="/" passHref>
-            {router.pathname === '/' ? (
-              <Text
-                cursor="pointer"
-                padding={3}
-                color={colorMode === 'light' ? 'blue.500' : 'blue.200'}>
-                {t('header.route.home')}
-              </Text>
-            ) : (
-              <Text
-                cursor="pointer"
-                padding={3}
-                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
-                {t('header.route.home')}
-              </Text>
-            )}
-          </NextLink>
-          <NextLink href="/projects" passHref>
-            {router.pathname === '/projects' ? (
-              <Text
-                cursor="pointer"
-                padding={3}
-                color={colorMode === 'light' ? 'blue.500' : 'blue.200'}>
-                {t('header.route.projects')}
-              </Text>
-            ) : (
-              <Text
-                cursor="pointer"
-                padding={3}
-                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
-                {t('header.route.projects')}
-              </Text>
-            )}
-          </NextLink>
-          <NextLink href="/about" passHref>
-            {router.pathname === '/about' ? (
-              <Text
-                cursor="pointer"
-                padding={3}
-                color={colorMode === 'light' ? 'blue.500' : 'blue.200'}>
-                {t('header.route.about')}
-              </Text>
-            ) : (
-              <Text
-                cursor="pointer"
-                padding={3}
-                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
-                {t('header.route.about')}
-              </Text>
-            )}
-          </NextLink>
-        </HStack>
+      <Container as="nav" maxWidth="container.lg" height="full" centerContent>
+        <Flex width="full" height="full" justifyContent="space-between" alignItems="center">
+          <HStack spacing={[2, 4, 4]} display={['none', 'flex', 'flex']}>
+            <NextLink href="/" passHref>
+              {router.pathname === '/' ? (
+                <Text
+                  cursor="pointer"
+                  padding={3}
+                  color={colorMode === 'light' ? 'blue.500' : 'blue.200'}>
+                  {t('header.route.home')}
+                </Text>
+              ) : (
+                <Text
+                  cursor="pointer"
+                  padding={3}
+                  _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                  {t('header.route.home')}
+                </Text>
+              )}
+            </NextLink>
+            <NextLink href="/projects" passHref>
+              {router.pathname === '/projects' ? (
+                <Text
+                  cursor="pointer"
+                  padding={3}
+                  color={colorMode === 'light' ? 'blue.500' : 'blue.200'}>
+                  {t('header.route.projects')}
+                </Text>
+              ) : (
+                <Text
+                  cursor="pointer"
+                  padding={3}
+                  _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                  {t('header.route.projects')}
+                </Text>
+              )}
+            </NextLink>
+            <NextLink href="/about" passHref>
+              {router.pathname === '/about' ? (
+                <Text
+                  cursor="pointer"
+                  padding={3}
+                  color={colorMode === 'light' ? 'blue.500' : 'blue.200'}>
+                  {t('header.route.about')}
+                </Text>
+              ) : (
+                <Text
+                  cursor="pointer"
+                  padding={3}
+                  _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                  {t('header.route.about')}
+                </Text>
+              )}
+            </NextLink>
+          </HStack>
 
-        <Menu placement="bottom-end">
-          <MenuButton
-            as={IconButton}
-            aria-label="Menu Toggle"
-            display={['flex', 'none', 'none']}
-            borderRadius="full"
-            icon={<RiMenuFill />}
-          />
-          <MenuList>
-            {router.pathname === '/' ? (
-              <MenuItem color={colorMode === 'light' ? 'blue.500' : 'blue.200'} icon={<FaHome />}>
-                {t('header.route.home')}
-              </MenuItem>
-            ) : (
-              <MenuItem
-                icon={<FaHome />}
-                onClick={() => router.push('/')}
-                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
-                {t('header.route.home')}
-              </MenuItem>
-            )}
-            {router.pathname === '/projects' ? (
-              <MenuItem color={colorMode === 'light' ? 'blue.500' : 'blue.200'} icon={<FaRocket />}>
-                {t('header.route.projects')}
-              </MenuItem>
-            ) : (
-              <MenuItem
-                icon={<FaRocket />}
-                onClick={() => router.push('/projects')}
-                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
-                {t('header.route.projects')}
-              </MenuItem>
-            )}
-            {router.pathname === '/about' ? (
-              <MenuItem color={colorMode === 'light' ? 'blue.500' : 'blue.200'} icon={<FaUser />}>
-                {t('header.route.about')}
-              </MenuItem>
-            ) : (
-              <MenuItem
-                icon={<FaUser />}
-                onClick={() => router.push('/about')}
-                _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
-                {t('header.route.about')}
-              </MenuItem>
-            )}
-          </MenuList>
-        </Menu>
+          <Menu placement="bottom-end">
+            <MenuButton
+              as={IconButton}
+              aria-label="Menu Toggle"
+              display={['flex', 'none', 'none']}
+              borderRadius="full"
+              icon={<RiMenuFill />}
+            />
+            <MenuList>
+              {router.pathname === '/' ? (
+                <MenuItem color={colorMode === 'light' ? 'blue.500' : 'blue.200'} icon={<FaHome />}>
+                  {t('header.route.home')}
+                </MenuItem>
+              ) : (
+                <MenuItem
+                  icon={<FaHome />}
+                  onClick={() => router.push('/')}
+                  _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                  {t('header.route.home')}
+                </MenuItem>
+              )}
+              {router.pathname === '/projects' ? (
+                <MenuItem
+                  color={colorMode === 'light' ? 'blue.500' : 'blue.200'}
+                  icon={<FaRocket />}>
+                  {t('header.route.projects')}
+                </MenuItem>
+              ) : (
+                <MenuItem
+                  icon={<FaRocket />}
+                  onClick={() => router.push('/projects')}
+                  _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                  {t('header.route.projects')}
+                </MenuItem>
+              )}
+              {router.pathname === '/about' ? (
+                <MenuItem color={colorMode === 'light' ? 'blue.500' : 'blue.200'} icon={<FaUser />}>
+                  {t('header.route.about')}
+                </MenuItem>
+              ) : (
+                <MenuItem
+                  icon={<FaUser />}
+                  onClick={() => router.push('/about')}
+                  _hover={{ color: colorMode === 'light' ? 'blue.600' : 'blue.300' }}>
+                  {t('header.route.about')}
+                </MenuItem>
+              )}
+            </MenuList>
+          </Menu>
 
-        <HStack marginLeft="auto">
-          <Button
-            aria-label="Language Toggle"
-            borderRadius="full"
-            leftIcon={<MdTranslate />}
-            onClick={() => onToggleLanguageClick(newLocale)}>
-            {newLocale.toUpperCase()}
-          </Button>
-          <IconButton
-            aria-label="Theme Toggle"
-            borderRadius="full"
-            icon={colorMode === 'light' ? <RiMoonFill /> : <RiSunLine />}
-            onClick={toggleColorMode}
-          />
-        </HStack>
-      </Flex>
+          <HStack>
+            <Button
+              aria-label="Language Toggle"
+              borderRadius="full"
+              leftIcon={<MdTranslate />}
+              onClick={() => onToggleLanguageClick(newLocale)}>
+              {newLocale.toUpperCase()}
+            </Button>
+            <IconButton
+              aria-label="Theme Toggle"
+              borderRadius="full"
+              icon={colorMode === 'light' ? <RiMoonFill /> : <RiSunLine />}
+              onClick={toggleColorMode}
+            />
+          </HStack>
+        </Flex>
+      </Container>
     </Box>
   );
 };

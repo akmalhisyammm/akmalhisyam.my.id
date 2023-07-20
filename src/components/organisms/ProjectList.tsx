@@ -13,7 +13,7 @@ const ProjectList = () => {
   const projectsCtx = useContext(ProjectContext);
 
   return (
-    <Box marginBottom={8}>
+    <Box marginBottom={4}>
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

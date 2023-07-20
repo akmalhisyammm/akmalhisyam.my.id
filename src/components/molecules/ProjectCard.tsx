@@ -23,7 +23,7 @@ const ProjectCard = ({ href, name, previewSrc, logoSrc }: ProjectCardProps) => {
         overflow="hidden"
         position="relative"
         borderWidth={2}
-        height={200}
+        height={[200, 200, 250]}
         cursor="pointer"
         transition="0.2s ease-out"
         _hover={{

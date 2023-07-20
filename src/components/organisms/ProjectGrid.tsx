@@ -16,7 +16,7 @@ const ProjectGrid = () => {
   const projectsCtx = useContext(ProjectContext);
 
   return (
-    <Box marginY={8}>
+    <Box marginY={4}>
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -39,7 +39,7 @@ const ProjectGrid = () => {
         }}
         initial="hidden"
         animate="show">
-        <SimpleGrid columns={[1, 2, 2]} gap={6} marginY={4}>
+        <SimpleGrid columns={[1, 2, 2]} gap={4} marginY={4}>
           {projectsCtx.projects
             .filter((project) => project.isFeatured)
             .map((project) => (
@@ -61,6 +61,7 @@ const ProjectGrid = () => {
         <Button
           colorScheme="blue"
           variant="outline"
+          size="lg"
           borderRadius="full"
           width="full"
           onClick={() => router.push('/projects')}>

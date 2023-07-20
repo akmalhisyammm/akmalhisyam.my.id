@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Box, HStack, Tooltip, Icon } from '@chakra-ui/react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
 
 import { AboutContext } from '@/contexts/about';
@@ -12,7 +12,7 @@ const AboutFavoriteTS = () => {
   const aboutCtx = useContext(AboutContext);
 
   return (
-    <Box marginBottom={8}>
+    <Box marginBottom={4}>
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

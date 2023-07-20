@@ -36,7 +36,7 @@ const AboutSummary = () => {
           justifyContent="space-between"
           alignItems="flex-start"
           marginY={4}
-          spacing={4}>
+          spacing={6}>
           <Box>
             {(aboutCtx.about.summary[currentLocale] as string[]).map((summary, idx) => (
               <Text key={idx} marginBottom={3}>
