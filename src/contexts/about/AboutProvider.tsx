@@ -42,11 +42,11 @@ export const AboutProvider = ({ children }: AboutProviderProps) => {
       id: [
         'Halo! Saya Muhammad Akmal Hisyam, biasa dipanggil Akmal. Saya adalah lulusan informatika\
         dari Universitas Multimedia Nusantara. Saya memiliki ketertarikan yang kuat dalam\
-        mengeksplorasi pengembangan aplikasi web dan mobile. Saya mulai belajar pengembangan web\
-        pada akhir tahun 2020, terutama pengembangan front-end. Setelah itu, saya mulai belajar\
-        pengembangan aplikasi mobile pada akhir tahun 2021.',
+        mengeksplorasi pengembangan aplikasi web dan mobile. Saya mulai belajar pengembangan\
+        aplikasi web pada akhir tahun 2020, terutama pengembangan front-end. Setelah itu, saya\
+        mulai belajar pengembangan aplikasi mobile pada akhir tahun 2021.',
         'Saat ini, saya sedang belajar framework React dan ekosistemnya. Saya biasanya mengambil\
-        kursus online dan memahami kode dari proyek developer lain untuk menemukan praktik terbaik\
+        kursus online dan memahami kode dari proyek pengembang lain untuk menemukan praktik terbaik\
         dalam menulis kode dan meningkatkan keterampilan saya. Saya menikmati belajar sesuatu yang\
         saya minati.',
       ],
