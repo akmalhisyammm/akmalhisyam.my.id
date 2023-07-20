@@ -5,7 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { BASE_URL } from '@/constants/url';
 import { Layout } from '@/components/layouts';
-import { AboutContent } from '@/components/organisms';
+import { AboutFavoriteTS, AboutSummary } from '@/components/organisms';
 
 import type { GetStaticProps } from 'next/types';
 
@@ -14,22 +14,23 @@ const About = () => {
 
   const router = useRouter();
 
-  const currentLocale = router.locale as 'en' | 'id';
+  const currentLocale = (router.locale as 'en' | 'id' | undefined) ?? 'en';
 
   return (
     <Layout>
       <NextSeo
-        title={t('title')}
+        title={t('title').split(' ')[0]}
         description={t('description')}
         canonical={`${BASE_URL}/${currentLocale === 'en' ? 'about' : 'id/about'}`}
         openGraph={{
           url: `${BASE_URL}/${currentLocale === 'en' ? 'about' : 'id/about'}`,
-          title: `${t('title')} | Akmal Hisyam`,
+          title: `${t('title').split(' ')[0]} | Akmal Hisyam`,
           description: t('description'),
         }}
       />
 
-      <AboutContent />
+      <AboutSummary />
+      <AboutFavoriteTS />
     </Layout>
   );
 };

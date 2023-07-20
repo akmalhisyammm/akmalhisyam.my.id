@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { Box, Button, HStack, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { FaChevronRight } from 'react-icons/fa';
-import { RiArticleLine } from 'react-icons/ri';
 import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
+import { FaChevronRight } from 'react-icons/fa';
+import { RiArticleLine } from 'react-icons/ri';
 
 import { AboutContext } from '@/contexts/about';
 import { ChakraHeading, ChakraLink, NextImage } from '@/components/atoms';
@@ -44,7 +44,7 @@ const Hero = () => {
                 variant="outline"
                 borderRadius="full"
                 rightIcon={<FaChevronRight />}
-                onClick={() => router.replace('/about')}>
+                onClick={() => router.push('/about')}>
                 {t('hero.cta.about')}
               </Button>
             </HStack>

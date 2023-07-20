@@ -12,11 +12,12 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { FaHome, FaRocket, FaUser } from 'react-icons/fa';
 import { MdTranslate } from 'react-icons/md';
 import { RiMenuFill, RiMoonFill, RiSunLine } from 'react-icons/ri';
-import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
+
+import { NextLink } from '@/components/atoms';
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -43,7 +44,7 @@ const Header = () => {
       zIndex={5}>
       <Flex as="nav" maxWidth={800} height="full" margin="0 auto" alignItems="center" padding={4}>
         <HStack spacing={[2, 4, 4]} display={['none', 'flex', 'flex']}>
-          <Link href="/" passHref>
+          <NextLink href="/" passHref>
             {router.pathname === '/' ? (
               <Text
                 cursor="pointer"
@@ -59,8 +60,8 @@ const Header = () => {
                 {t('header.route.home')}
               </Text>
             )}
-          </Link>
-          <Link href="/projects" passHref>
+          </NextLink>
+          <NextLink href="/projects" passHref>
             {router.pathname === '/projects' ? (
               <Text
                 cursor="pointer"
@@ -76,8 +77,8 @@ const Header = () => {
                 {t('header.route.projects')}
               </Text>
             )}
-          </Link>
-          <Link href="/about" passHref>
+          </NextLink>
+          <NextLink href="/about" passHref>
             {router.pathname === '/about' ? (
               <Text
                 cursor="pointer"
@@ -93,7 +94,7 @@ const Header = () => {
                 {t('header.route.about')}
               </Text>
             )}
-          </Link>
+          </NextLink>
         </HStack>
 
         <Menu placement="bottom-end">

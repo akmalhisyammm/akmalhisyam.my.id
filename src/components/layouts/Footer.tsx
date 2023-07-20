@@ -1,9 +1,8 @@
 import { useContext } from 'react';
 import { Box, HStack, Icon, Text, useColorMode } from '@chakra-ui/react';
-import Link from 'next/link';
 
 import { AboutContext } from '@/contexts/about';
-import { ChakraLink } from '@/components/atoms';
+import { ChakraLink, NextLink } from '@/components/atoms';
 
 const Footer = () => {
   const { colorMode } = useColorMode();
@@ -33,7 +32,7 @@ const Footer = () => {
 
       <Text>
         {new Date().getFullYear()} &bull;{' '}
-        <Link href="/about" passHref>
+        <NextLink href="/about" passHref>
           <Text
             as="span"
             cursor="pointer"
@@ -41,7 +40,7 @@ const Footer = () => {
             _hover={{ color: colorMode === 'light' ? 'blue.500' : 'blue.200' }}>
             Muhammad Akmal Hisyam
           </Text>
-        </Link>
+        </NextLink>
       </Text>
     </Box>
   );

@@ -63,7 +63,7 @@ const ProjectGrid = () => {
           variant="outline"
           borderRadius="full"
           width="full"
-          onClick={() => router.replace('/projects')}>
+          onClick={() => router.push('/projects')}>
           {t('featured.projects.cta')}
         </Button>
       </motion.div>
