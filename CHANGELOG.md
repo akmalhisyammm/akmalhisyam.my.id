@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/akmalhisyammm/akmalhisyam.my.id/compare/v1.1.0...v1.2.0) (2023-07-20)
+
+
+### Features
+
+* add NextLink atom, separate AboutContent organism, and adjust pages ([5bbfc9d](https://github.com/akmalhisyammm/akmalhisyam.my.id/commit/5bbfc9d96e1032e1b899618a59ee9901d74806eb))
+* add resume link button in home page ([#7](https://github.com/akmalhisyammm/akmalhisyam.my.id/issues/7)) ([270518e](https://github.com/akmalhisyammm/akmalhisyam.my.id/commit/270518e2462d9ca662b7036a5ecc90b583f487ab))
+* setup 404 page ([#18](https://github.com/akmalhisyammm/akmalhisyam.my.id/issues/18)) ([fcb4c71](https://github.com/akmalhisyammm/akmalhisyam.my.id/commit/fcb4c71f05cd47a8856312c6287eb0de42bf110e))
+* setup next-i18next for internationalization ([#17](https://github.com/akmalhisyammm/akmalhisyam.my.id/issues/17)) ([1ff328d](https://github.com/akmalhisyammm/akmalhisyam.my.id/commit/1ff328d3099e0103b65084accea518d127fd78e9))
+* setup umami ([#14](https://github.com/akmalhisyammm/akmalhisyam.my.id/issues/14)) ([1ea33c8](https://github.com/akmalhisyammm/akmalhisyam.my.id/commit/1ea33c8cbad029dc2eca1a2a500e0e614bb2a709))
+
 ## [1.1.0](https://github.com/akmalhisyammm/akmalhisyam.my.id/compare/v1.0.0...v1.1.0) (2022-05-09)
 
 
