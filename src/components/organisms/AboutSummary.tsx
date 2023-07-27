@@ -14,7 +14,7 @@ const AboutSummary = () => {
 
   const aboutCtx = useContext(AboutContext);
 
-  const currentLocale = (router.locale as 'en' | 'id' | undefined) ?? 'en';
+  const currentLocale = (router?.locale as 'en' | 'id' | undefined) ?? 'en';
 
   return (
     <Box marginBottom={4}>

@@ -1,16 +1,9 @@
 import { forwardRef, useEffect, useState } from 'react';
 import { Image } from '@chakra-ui/react';
 
-type ChakraImageProps = {
-  src: string;
-  alt: string;
-  [key: string]: unknown;
-};
+import type { ImageProps } from '@chakra-ui/react';
 
-const ChakraImage = (
-  { src, alt, ...rest }: ChakraImageProps,
-  ref: React.RefObject<HTMLImageElement>,
-) => {
+const ChakraImage = ({ src, alt, ...rest }: ImageProps, ref: React.RefObject<HTMLImageElement>) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -37,5 +30,5 @@ const ChakraImage = (
 };
 
 export default forwardRef(
-  ChakraImage as React.ForwardRefRenderFunction<HTMLImageElement, ChakraImageProps>,
+  ChakraImage as React.ForwardRefRenderFunction<HTMLImageElement, ImageProps>,
 );

@@ -1,16 +1,12 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-type NextImageProps = {
-  src: string;
-  alt: string;
-  width?: number;
-  height?: number;
-  [key: string]: unknown;
-};
+import type { ImageProps } from 'next/image';
 
-const NextImage = ({ src, alt, width, height, ...rest }: NextImageProps) => {
+const NextImage = ({ src, alt, width, height, ...rest }: ImageProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  if (src === undefined) return null;
 
   return (
     <Image
