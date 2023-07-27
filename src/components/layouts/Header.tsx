@@ -32,7 +32,7 @@ const Header = () => {
     router.push({ pathname, query }, asPath, { locale });
   };
 
-  const newLocale = router.locale === 'en' ? 'id' : 'en';
+  const newLocale = router?.locale === 'en' ? 'id' : 'en';
 
   return (
     <Box
@@ -47,7 +47,7 @@ const Header = () => {
         <Flex width="full" height="full" justifyContent="space-between" alignItems="center">
           <HStack spacing={[2, 4, 4]} display={['none', 'flex', 'flex']}>
             <NextLink href="/" passHref>
-              {router.pathname === '/' ? (
+              {router?.pathname === '/' ? (
                 <Text
                   cursor="pointer"
                   padding={3}
@@ -64,7 +64,7 @@ const Header = () => {
               )}
             </NextLink>
             <NextLink href="/projects" passHref>
-              {router.pathname === '/projects' ? (
+              {router?.pathname === '/projects' ? (
                 <Text
                   cursor="pointer"
                   padding={3}
@@ -81,7 +81,7 @@ const Header = () => {
               )}
             </NextLink>
             <NextLink href="/about" passHref>
-              {router.pathname === '/about' ? (
+              {router?.pathname === '/about' ? (
                 <Text
                   cursor="pointer"
                   padding={3}
@@ -108,7 +108,7 @@ const Header = () => {
               icon={<RiMenuFill />}
             />
             <MenuList>
-              {router.pathname === '/' ? (
+              {router?.pathname === '/' ? (
                 <MenuItem color={colorMode === 'light' ? 'blue.500' : 'blue.200'} icon={<FaHome />}>
                   {t('header.route.home')}
                 </MenuItem>
@@ -120,7 +120,7 @@ const Header = () => {
                   {t('header.route.home')}
                 </MenuItem>
               )}
-              {router.pathname === '/projects' ? (
+              {router?.pathname === '/projects' ? (
                 <MenuItem
                   color={colorMode === 'light' ? 'blue.500' : 'blue.200'}
                   icon={<FaRocket />}>
@@ -134,7 +134,7 @@ const Header = () => {
                   {t('header.route.projects')}
                 </MenuItem>
               )}
-              {router.pathname === '/about' ? (
+              {router?.pathname === '/about' ? (
                 <MenuItem color={colorMode === 'light' ? 'blue.500' : 'blue.200'} icon={<FaUser />}>
                   {t('header.route.about')}
                 </MenuItem>

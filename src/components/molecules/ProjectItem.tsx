@@ -23,7 +23,7 @@ const ProjectItem = ({ href, name, description, techStacks, type, logoSrc }: Pro
 
   const logoRef = useRef<HTMLImageElement>(null);
 
-  const currentLocale = (router.locale as 'en' | 'id' | undefined) ?? 'en';
+  const currentLocale = (router?.locale as 'en' | 'id' | undefined) ?? 'en';
 
   return (
     <ChakraLink href={href} _hover={{ textDecoration: 'none' }}>

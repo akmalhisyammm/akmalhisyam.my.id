@@ -14,7 +14,7 @@ const Projects = () => {
 
   const router = useRouter();
 
-  const currentLocale = (router.locale as 'en' | 'id' | undefined) ?? 'en';
+  const currentLocale = (router?.locale as 'en' | 'id' | undefined) ?? 'en';
 
   return (
     <Layout>
