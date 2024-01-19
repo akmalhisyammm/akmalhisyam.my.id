@@ -1,0 +1,37 @@
+name: Application CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  application:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'yarn'
+
+      - name: Install all dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Format check application
+        run: yarn format:check
+
+      - name: Lint application
+        run: yarn lint
+
+      - name: Type check application
+        run: yarn type:check
+
+      - name: Build application
+        run: yarn build
+        env:
+          UMAMI_WEBSITE_ID: ${{secrets.UMAMI_WEBSITE_ID}}
+          UMAMI_WEBSITE_URL: ${{secrets.UMAMI_WEBSITE_URL}}

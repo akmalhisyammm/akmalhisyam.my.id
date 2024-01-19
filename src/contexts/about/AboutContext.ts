@@ -1,10 +1,12 @@
+'use client';
+
 import { createContext } from 'react';
 
-import type { IAbout } from '@/types/about';
+import type { About } from '@/types/about';
 
-interface Context {
-  about: IAbout;
-}
+type Context = {
+  about: About;
+};
 
 export const AboutContext = createContext<Context>({
   about: {

@@ -1,17 +1,17 @@
 import type { IconType } from 'react-icons';
 
-export interface ILocale {
+export type Locale = {
   en: string | string[];
   id: string | string[];
-}
+};
 
-export interface ITechStack {
+export type TechStack = {
   name: string;
   icon: IconType;
-}
+};
 
-export interface ISocialMedia {
+export type SocialMedia = {
   name: string;
   icon: IconType;
   link: string;
-}
+};

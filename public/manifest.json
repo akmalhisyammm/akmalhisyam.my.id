@@ -2,11 +2,10 @@
   "name": "Akmal Hisyam",
   "short_name": "Akmal Hisyam",
   "description": "Akmal Hisyam's personal site",
-  "lang": "en-US",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#FFFFFF",
-  "background_color": "#FFFFFF",
+  "theme_color": "#EDF2F7",
+  "background_color": "#EDF2F7",
   "icons": [
     {
       "src": "/icons/icon-48x48.png",

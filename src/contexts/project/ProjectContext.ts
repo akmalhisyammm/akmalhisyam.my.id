@@ -1,9 +1,11 @@
+'use client';
+
 import { createContext } from 'react';
 
-import type { IProject } from '@/types/project';
+import type { Project } from '@/types/project';
 
-interface Context {
-  projects: IProject[];
-}
+type Context = {
+  projects: Project[];
+};
 
 export const ProjectContext = createContext<Context>({ projects: [] });

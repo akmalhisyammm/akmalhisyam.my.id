@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://akmalhisyam.my.id',
+  siteUrl: process.env.NEXT_PUBLIC_BASE_URL,
   generateRobotsTxt: true,
 };

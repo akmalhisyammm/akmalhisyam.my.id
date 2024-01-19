@@ -1,10 +1,13 @@
+'use client';
+
 import {
   SiChakraui,
-  SiFirebase,
+  SiExpress,
   SiGithub,
   SiGmail,
   SiInstagram,
   SiLinkedin,
+  SiMongodb,
   SiNextdotjs,
   SiReact,
   SiTwitter,
@@ -14,20 +17,21 @@ import {
 import { AboutContext } from './AboutContext';
 import { IMAGE_URL } from '@/constants/url';
 
-import type { IAbout } from '@/types/about';
+import type { About } from '@/types/about';
 
 type AboutProviderProps = {
   children: React.ReactNode;
 };
 
 export const AboutProvider = ({ children }: AboutProviderProps) => {
-  const about: IAbout = {
+  const about: About = {
     name: 'Muhammad Akmal Hisyam',
     nickname: 'Akmal',
     occupation: 'Freelance Front-End Developer',
     photo: `${IMAGE_URL}/about/akmal.jpg`,
     avatar: `${IMAGE_URL}/about/avatar.png`,
-    resume: 'https://drive.google.com/file/d/14_5Lm34faG40OVfLCNkue4Ao0MJUomTi/view?usp=sharing',
+    resume:
+      'https://drive.google.com/file/d/1B27jZp1Itowh6q4b-vkEXC3MaMMJczDS/view?usp=sharing',
     summary: {
       en: [
         "Hi! I'm Muhammad Akmal Hisyam, you can call me Akmal. I am an informatics graduate from\
@@ -69,8 +73,12 @@ export const AboutProvider = ({ children }: AboutProviderProps) => {
         icon: SiChakraui,
       },
       {
-        name: 'Firebase',
-        icon: SiFirebase,
+        name: 'Express.js',
+        icon: SiExpress,
+      },
+      {
+        name: 'MongoDB',
+        icon: SiMongodb,
       },
     ],
     socials: [
@@ -102,5 +110,7 @@ export const AboutProvider = ({ children }: AboutProviderProps) => {
     ],
   };
 
-  return <AboutContext.Provider value={{ about }}>{children}</AboutContext.Provider>;
+  return (
+    <AboutContext.Provider value={{ about }}>{children}</AboutContext.Provider>
+  );
 };

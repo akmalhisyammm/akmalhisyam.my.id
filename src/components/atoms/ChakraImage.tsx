@@ -1,9 +1,14 @@
+'use client';
+
 import { forwardRef, useEffect, useState } from 'react';
 import { Image } from '@chakra-ui/react';
 
 import type { ImageProps } from '@chakra-ui/react';
 
-const ChakraImage = ({ src, alt, ...rest }: ImageProps, ref: React.RefObject<HTMLImageElement>) => {
+const ChakraImage = (
+  { src, alt, ...rest }: ImageProps,
+  ref: React.RefObject<HTMLImageElement>,
+) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
