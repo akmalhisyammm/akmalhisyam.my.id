@@ -1,13 +1,13 @@
-import type { ILocale, ISocialMedia, ITechStack } from './globals';
+import type { Locale, SocialMedia, TechStack } from './globals';
 
-export interface IAbout {
+export type About = {
   name: string;
   nickname: string;
   occupation: string;
   photo: string;
   avatar: string;
   resume: string;
-  summary: ILocale;
-  favoriteTechStacks: ITechStack[];
-  socials: ISocialMedia[];
-}
+  summary: Locale;
+  favoriteTechStacks: TechStack[];
+  socials: SocialMedia[];
+};
