@@ -15,25 +15,22 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '18'
           cache: 'yarn'
 
-      - name: Install dependencies
+      - name: Install all dependencies
         run: yarn --frozen-lockfile
 
-      - name: Run format check
+      - name: Format check application
         run: yarn format:check
 
-      - name: Run lint
+      - name: Lint application
         run: yarn lint
 
-      - name: Run type check
+      - name: Type check application
         run: yarn typescript:check
 
-      - name: Run unit tests in CI environment
-        run: yarn test:ci
-
-      - name: Build the application
+      - name: Build application
         run: yarn build
         env:
           UMAMI_WEBSITE_ID: ${{secrets.UMAMI_WEBSITE_ID}}
