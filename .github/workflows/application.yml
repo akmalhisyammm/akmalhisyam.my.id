@@ -28,7 +28,7 @@ jobs:
         run: yarn lint
 
       - name: Type check application
-        run: yarn typescript:check
+        run: yarn type:check
 
       - name: Build application
         run: yarn build
