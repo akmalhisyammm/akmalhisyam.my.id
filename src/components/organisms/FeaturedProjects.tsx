@@ -1,19 +1,17 @@
+'use client';
+
 import { useContext } from 'react';
-import { Box, Button, SimpleGrid } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Box, Button, SimpleGrid } from '@chakra-ui/react';
 
 import { ProjectContext } from '@/contexts/project';
-import { ChakraHeading } from '@/components/atoms';
+import { BrandHeading, RouteLink } from '@/components/atoms';
 import { ProjectCard } from '@/components/molecules';
 
-const ProjectGrid = () => {
+const FeaturedProjects = () => {
+  const { projects } = useContext(ProjectContext);
   const { t } = useTranslation('home');
-
-  const router = useRouter();
-
-  const projectsCtx = useContext(ProjectContext);
 
   return (
     <Box marginY={4}>
@@ -21,9 +19,9 @@ const ProjectGrid = () => {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: 'easeOut', delay: 0.2 }}>
-        <ChakraHeading as="h3" size="lg" paddingBottom={1}>
-          {t('featured.projects.title')}
-        </ChakraHeading>
+        <BrandHeading as="h3" size="lg" paddingBottom={1}>
+          {t('featuredProjects.title')}
+        </BrandHeading>
       </motion.div>
 
       <motion.div
@@ -40,8 +38,9 @@ const ProjectGrid = () => {
         initial="hidden"
         animate="show">
         <SimpleGrid columns={[1, 2, 2]} gap={4} marginY={4}>
-          {projectsCtx.projects
+          {projects
             .filter((project) => project.isFeatured)
+            .sort((a, b) => (b.id > a.id ? 1 : -1))
             .map((project) => (
               <motion.div
                 key={project.id}
@@ -58,18 +57,19 @@ const ProjectGrid = () => {
               </motion.div>
             ))}
         </SimpleGrid>
-        <Button
-          colorScheme="blue"
-          variant="outline"
-          size="lg"
-          borderRadius="full"
-          width="full"
-          onClick={() => router.push('/projects')}>
-          {t('featured.projects.cta')}
-        </Button>
+        <RouteLink href="/projects">
+          <Button
+            colorScheme="blue"
+            variant="outline"
+            size="lg"
+            borderRadius="full"
+            width="full">
+            {t('featuredProjects.cta')}
+          </Button>
+        </RouteLink>
       </motion.div>
     </Box>
   );
 };
 
-export default ProjectGrid;
+export default FeaturedProjects;

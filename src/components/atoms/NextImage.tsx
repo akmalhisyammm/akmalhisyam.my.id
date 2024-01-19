@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -15,7 +17,7 @@ const NextImage = ({ src, alt, width, height, ...rest }: ImageProps) => {
       width={width}
       height={height}
       decoding="async"
-      onLoadingComplete={() => setIsLoading(false)}
+      onLoad={() => setIsLoading(false)}
       priority
       unoptimized
       style={{

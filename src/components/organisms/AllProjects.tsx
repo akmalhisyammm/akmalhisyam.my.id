@@ -1,16 +1,17 @@
+'use client';
+
 import { useContext } from 'react';
-import { Box } from '@chakra-ui/react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Box, SimpleGrid } from '@chakra-ui/react';
 
 import { ProjectContext } from '@/contexts/project';
-import { ChakraHeading } from '@/components/atoms';
+import { BrandHeading } from '@/components/atoms';
 import { ProjectItem } from '@/components/molecules';
 
-const ProjectList = () => {
+const AllProjects = () => {
+  const { projects } = useContext(ProjectContext);
   const { t } = useTranslation('projects');
-
-  const projectsCtx = useContext(ProjectContext);
 
   return (
     <Box marginBottom={4}>
@@ -18,9 +19,9 @@ const ProjectList = () => {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: 'easeOut' }}>
-        <ChakraHeading as="h2" size="2xl" paddingBottom={2}>
+        <BrandHeading as="h2" size="2xl" paddingBottom={2}>
           {t('title')}
-        </ChakraHeading>
+        </BrandHeading>
       </motion.div>
 
       <motion.div
@@ -36,8 +37,8 @@ const ProjectList = () => {
         }}
         initial="hidden"
         animate="show">
-        <Box>
-          {projectsCtx.projects
+        <SimpleGrid columns={[1, 1, 2]} gap={4} marginY={4}>
+          {projects
             .sort((a, b) => (b.id > a.id ? 1 : -1))
             .map((project) => (
               <motion.div
@@ -56,10 +57,10 @@ const ProjectList = () => {
                 />
               </motion.div>
             ))}
-        </Box>
+        </SimpleGrid>
       </motion.div>
     </Box>
   );
 };
 
-export default ProjectList;
+export default AllProjects;

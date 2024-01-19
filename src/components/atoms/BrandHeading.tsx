@@ -1,11 +1,13 @@
+'use client';
+
 import { Heading, useColorMode } from '@chakra-ui/react';
 
-type ChakraHeadingProps = {
+type BrandHeadingProps = {
   children: React.ReactNode;
   [key: string]: unknown;
 };
 
-const ChakraHeading = ({ children, ...rest }: ChakraHeadingProps) => {
+const BrandHeading = ({ children, ...rest }: BrandHeadingProps) => {
   const { colorMode } = useColorMode();
 
   return (
@@ -22,4 +24,4 @@ const ChakraHeading = ({ children, ...rest }: ChakraHeadingProps) => {
   );
 };
 
-export default ChakraHeading;
+export default BrandHeading;

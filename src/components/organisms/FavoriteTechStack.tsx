@@ -1,15 +1,16 @@
+'use client';
+
 import { useContext } from 'react';
-import { Box, HStack, Tooltip, Icon } from '@chakra-ui/react';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Box, HStack, Tooltip, Icon } from '@chakra-ui/react';
 
 import { AboutContext } from '@/contexts/about';
-import { ChakraHeading } from '@/components/atoms';
+import { BrandHeading } from '@/components/atoms';
 
-const AboutFavoriteTS = () => {
+const FavoriteTechStack = () => {
+  const { about } = useContext(AboutContext);
   const { t } = useTranslation('about');
-
-  const aboutCtx = useContext(AboutContext);
 
   return (
     <Box marginBottom={4}>
@@ -17,9 +18,9 @@ const AboutFavoriteTS = () => {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: 'easeOut', delay: 0.4 }}>
-        <ChakraHeading as="h3" size="lg" paddingBottom={1}>
-          {t('favoriteTS.title')}
-        </ChakraHeading>
+        <BrandHeading as="h3" size="lg" paddingBottom={1}>
+          {t('favoriteTechStack.title')}
+        </BrandHeading>
       </motion.div>
 
       <motion.div
@@ -36,7 +37,7 @@ const AboutFavoriteTS = () => {
         initial="hidden"
         animate="show">
         <HStack marginTop={2} spacing={4}>
-          {aboutCtx.about.favoriteTechStacks.map((fts, idx) => (
+          {about.favoriteTechStacks.map((fts, idx) => (
             <motion.div
               key={idx}
               variants={{
@@ -56,4 +57,4 @@ const AboutFavoriteTS = () => {
   );
 };
 
-export default AboutFavoriteTS;
+export default FavoriteTechStack;

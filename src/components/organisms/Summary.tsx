@@ -1,20 +1,20 @@
+'use client';
+
 import { useContext } from 'react';
-import { Box, HStack, Text } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Box, HStack, Text } from '@chakra-ui/react';
 
 import { AboutContext } from '@/contexts/about';
-import { ChakraHeading, NextImage } from '@/components/atoms';
+import { BrandHeading, NextImage } from '@/components/atoms';
 
-const AboutSummary = () => {
-  const { t } = useTranslation('about');
+import type { Locale } from '@/types/globals';
 
-  const router = useRouter();
+const Summary = () => {
+  const { about } = useContext(AboutContext);
+  const { i18n, t } = useTranslation('about');
 
-  const aboutCtx = useContext(AboutContext);
-
-  const currentLocale = (router?.locale as 'en' | 'id' | undefined) ?? 'en';
+  const locale = i18n.language as keyof Locale;
 
   return (
     <Box marginBottom={4}>
@@ -22,9 +22,9 @@ const AboutSummary = () => {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: 'easeOut' }}>
-        <ChakraHeading as="h2" size="2xl" paddingBottom={2}>
+        <BrandHeading as="h2" size="2xl" paddingBottom={2}>
           {t('title')}
-        </ChakraHeading>
+        </BrandHeading>
       </motion.div>
 
       <motion.div
@@ -38,7 +38,7 @@ const AboutSummary = () => {
           marginY={4}
           spacing={6}>
           <Box>
-            {(aboutCtx.about.summary[currentLocale] as string[]).map((summary, idx) => (
+            {(about.summary[locale] as string[]).map((summary, idx) => (
               <Text key={idx} marginBottom={3}>
                 {summary}
               </Text>
@@ -53,7 +53,7 @@ const AboutSummary = () => {
             flex="0 0 auto"
             boxShadow="base"
             marginX="auto">
-            <NextImage src={aboutCtx.about.photo} alt="Akmal Hisyam's photo" fill />
+            <NextImage src={about.photo} alt="Akmal Hisyam's photo" fill />
           </Box>
         </HStack>
       </motion.div>
@@ -61,4 +61,4 @@ const AboutSummary = () => {
   );
 };
 
-export default AboutSummary;
+export default Summary;

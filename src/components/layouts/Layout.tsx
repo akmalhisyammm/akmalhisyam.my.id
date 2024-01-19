@@ -1,7 +1,8 @@
+'use client';
+
 import { Box, Container, useColorMode } from '@chakra-ui/react';
 
-import Header from './Header';
-import Footer from './Footer';
+import { Footer, Header } from '@/components/organisms';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -18,10 +19,14 @@ const Layout = ({ children }: LayoutProps) => {
       backgroundColor={colorMode === 'light' ? 'gray.100' : 'gray.900'}>
       <Header />
 
-      <Container maxWidth="container.lg" position="relative" top={70} padding={4} centerContent>
-        <Box as="main" marginY={22}>
-          {children}
-        </Box>
+      <Container
+        as="main"
+        maxWidth="container.lg"
+        position="relative"
+        top={70}
+        padding={4}
+        centerContent>
+        <Box marginY={22}>{children}</Box>
         <Footer />
       </Container>
     </Box>

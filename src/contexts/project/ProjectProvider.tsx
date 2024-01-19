@@ -1,3 +1,5 @@
+'use client';
+
 import {
   SiBootstrap,
   SiChakraui,
@@ -15,14 +17,14 @@ import {
 import { ProjectContext } from './ProjectContext';
 import { IMAGE_URL } from '@/constants/url';
 
-import type { IProject } from '@/types/project';
+import type { Project } from '@/types/project';
 
 type ProjectProviderProps = {
   children: React.ReactNode;
 };
 
 export const ProjectProvider = ({ children }: ProjectProviderProps) => {
-  const projects: IProject[] = [
+  const projects: Project[] = [
     {
       id: 'P001',
       name: 'Countdown Timer',
@@ -179,7 +181,7 @@ export const ProjectProvider = ({ children }: ProjectProviderProps) => {
         },
       ],
       link: 'https://rikumovies.akmalhisyam.my.id/',
-      isFeatured: true,
+      isFeatured: false,
     },
     {
       id: 'P006',
@@ -253,7 +255,49 @@ export const ProjectProvider = ({ children }: ProjectProviderProps) => {
       link: 'https://gitpedia.akmalhisyam.my.id/',
       isFeatured: true,
     },
+    {
+      id: 'P008',
+      name: 'Rikutodo',
+      description: {
+        en: 'Site to assist users in managing their daily tasks.',
+        id: 'Situs untuk membantu pengguna dalam mengelola tugas-tugas harian mereka.',
+      },
+      type: {
+        en: 'Personal',
+        id: 'Pribadi',
+      },
+      logo: `${IMAGE_URL}/projects/icons/rikutodo.png`,
+      preview: `${IMAGE_URL}/projects/previews/rikutodo_preview.png`,
+      techStacks: [
+        {
+          name: 'Next.js',
+          icon: SiNextdotjs,
+        },
+        {
+          name: 'TypeScript',
+          icon: SiTypescript,
+        },
+        {
+          name: 'Chakra UI',
+          icon: SiChakraui,
+        },
+        {
+          name: 'Express.js',
+          icon: SiExpress,
+        },
+        {
+          name: 'MongoDB',
+          icon: SiMongodb,
+        },
+      ],
+      link: 'https://rikutodo.akmalhisyam.my.id/',
+      isFeatured: true,
+    },
   ];
 
-  return <ProjectContext.Provider value={{ projects }}>{children}</ProjectContext.Provider>;
+  return (
+    <ProjectContext.Provider value={{ projects }}>
+      {children}
+    </ProjectContext.Provider>
+  );
 };
