@@ -44,7 +44,7 @@ const Hero = () => {
             <ExternalLink href={about.resume}>
               <Button
                 colorScheme="blue"
-                size={['md', 'lg', 'lg']}
+                size="lg"
                 borderRadius="full"
                 leftIcon={<RiArticleLine />}>
                 {t('hero.cta.resume')}
@@ -54,7 +54,7 @@ const Hero = () => {
               <Button
                 colorScheme="blue"
                 variant="outline"
-                size={['md', 'lg', 'lg']}
+                size="lg"
                 borderRadius="full"
                 rightIcon={<FaChevronRight />}>
                 {t('hero.cta.about')}
