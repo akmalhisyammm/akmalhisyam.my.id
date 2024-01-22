@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/akmalhisyammm/akmalhisyam.my.id/compare/v1.2.0...v1.3.0) (2024-01-22)
+
+
+### Features
+
+* setup github workflows ([d523fb7](https://github.com/akmalhisyammm/akmalhisyam.my.id/commit/d523fb7352c2e76f590ef243fad901d8da16430b))
+* setup jest for unit testing ([#19](https://github.com/akmalhisyammm/akmalhisyam.my.id/issues/19)) ([b02df82](https://github.com/akmalhisyammm/akmalhisyam.my.id/commit/b02df82b3094628ae67d361d7a91b084f3da4e74))
+
 ## [1.2.0](https://github.com/akmalhisyammm/akmalhisyam.my.id/compare/v1.1.0...v1.2.0) (2023-07-20)
 
 
