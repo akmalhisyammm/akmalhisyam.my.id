@@ -78,7 +78,7 @@ const ProjectItem = ({
 						</Text>
 					</Box>
 					<Box>
-						<HStack marginTop={2} spacing={3}>
+						<HStack marginTop={2} spacing={3} flexWrap="wrap">
 							{techStacks.map((ts) => (
 								<Tooltip key={ts.name} label={ts.name}>
 									<span>
