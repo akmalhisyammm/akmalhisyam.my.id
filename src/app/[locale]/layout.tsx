@@ -71,7 +71,9 @@ const RootLayout = ({ children, params: { locale } }: RootLayoutProps) => {
 				<Script
 					src={UMAMI_WEBSITE_URL}
 					data-website-id={UMAMI_WEBSITE_ID}
+					data-domains="akmalhisyam.my.id"
 					async
+					defer
 				/>
 			</body>
 		</html>
