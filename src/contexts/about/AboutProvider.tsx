@@ -1,7 +1,6 @@
 'use client';
 
 import {
-	SiChakraui,
 	SiExpress,
 	SiGithub,
 	SiGmail,
@@ -10,6 +9,8 @@ import {
 	SiMongodb,
 	SiNextdotjs,
 	SiReact,
+	SiRedis,
+	SiTailwindcss,
 	SiTwitter,
 	SiTypescript,
 } from 'react-icons/si';
@@ -31,7 +32,7 @@ export const AboutProvider = ({ children }: AboutProviderProps) => {
 		photo: `${IMAGE_URL}/about/profile.jpg`,
 		avatar: `${IMAGE_URL}/about/avatar.png`,
 		resume:
-			'https://drive.google.com/file/d/1B27jZp1Itowh6q4b-vkEXC3MaMMJczDS/view?usp=sharing',
+			'https://drive.google.com/file/d/1e27X-CD9g3k7DSwLtUzJYCG9FjZp_4__/view?usp=sharing',
 		summary: {
 			en: [
 				"Hi! I'm Muhammad Akmal Hisyam, you can call me Akmal. I am an informatics graduate from\
@@ -57,6 +58,10 @@ export const AboutProvider = ({ children }: AboutProviderProps) => {
 		},
 		favoriteTechStacks: [
 			{
+				name: 'TypeScript',
+				icon: SiTypescript,
+			},
+			{
 				name: 'Next.js',
 				icon: SiNextdotjs,
 			},
@@ -65,16 +70,16 @@ export const AboutProvider = ({ children }: AboutProviderProps) => {
 				icon: SiReact,
 			},
 			{
-				name: 'TypeScript',
-				icon: SiTypescript,
-			},
-			{
-				name: 'Chakra UI',
-				icon: SiChakraui,
+				name: 'Tailwind CSS',
+				icon: SiTailwindcss,
 			},
 			{
 				name: 'Express.js',
 				icon: SiExpress,
+			},
+			{
+				name: 'Redis',
+				icon: SiRedis,
 			},
 			{
 				name: 'MongoDB',
