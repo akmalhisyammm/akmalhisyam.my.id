@@ -30,7 +30,7 @@ jobs:
         run: bun type:check
 
       - name: Build application
-        run: bun build
+        run: bun run build
         env:
           UMAMI_WEBSITE_ID: ${{secrets.UMAMI_WEBSITE_ID}}
           UMAMI_WEBSITE_URL: ${{secrets.UMAMI_WEBSITE_URL}}
