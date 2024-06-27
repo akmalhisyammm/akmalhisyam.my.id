@@ -10,13 +10,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: '20'
-          cache: 'bun'
+          bun-version: latest
 
       - name: Install all dependencies
         run: bun --frozen-lockfile
