@@ -20,7 +20,7 @@ const Footer = () => {
 			borderColor={colorMode === 'light' ? 'gray.400' : 'gray.500'}
 			paddingY={4}
 		>
-			<HStack justifyContent="center">
+			<HStack justifyContent="center" flexWrap="wrap">
 				{about.socials.map((social) => (
 					<ExternalLink
 						key={social.name}

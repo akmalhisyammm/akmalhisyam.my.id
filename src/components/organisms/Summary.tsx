@@ -77,7 +77,7 @@ const Summary = () => {
 								initial="hidden"
 								animate="show"
 							>
-								<HStack marginTop={2} spacing={4}>
+								<HStack marginTop={2} spacing={4} flexWrap="wrap">
 									{about.favoriteTechStacks.map((fts) => (
 										<motion.div
 											key={fts.name}
@@ -104,8 +104,8 @@ const Summary = () => {
 					<Box
 						as="figure"
 						position="relative"
-						width={[300, 300, 240]}
-						height={[375, 375, 300]}
+						width={[240, 300, 240]}
+						height={[300, 375, 300]}
 						borderRadius={18}
 						flex="0 0 auto"
 						boxShadow="base"
