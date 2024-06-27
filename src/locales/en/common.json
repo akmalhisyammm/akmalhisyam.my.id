@@ -1,7 +1,7 @@
 {
-  "header": {
-    "home": "Home",
-    "projects": "Projects",
-    "about": "About"
-  }
+	"header": {
+		"home": "Home",
+		"projects": "Projects",
+		"about": "About"
+	}
 }

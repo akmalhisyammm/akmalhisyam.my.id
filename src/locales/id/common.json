@@ -1,7 +1,7 @@
 {
-  "header": {
-    "home": "Beranda",
-    "projects": "Proyek",
-    "about": "Tentang"
-  }
+	"header": {
+		"home": "Beranda",
+		"projects": "Proyek",
+		"about": "Tentang"
+	}
 }

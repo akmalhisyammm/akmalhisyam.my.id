@@ -11,4 +11,3 @@ export { default as AllProjects } from './AllProjects';
 
 /* ---------- ABOUT ---------- */
 export { default as Summary } from './Summary';
-export { default as FavoriteTechStack } from './FavoriteTechStack';
