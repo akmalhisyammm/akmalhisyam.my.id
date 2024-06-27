@@ -8,21 +8,21 @@ import { initTranslations } from '@/utils/i18n';
 import type { Resource } from 'i18next';
 
 type TranslationProviderProps = {
-  children: React.ReactNode;
-  locale: string;
-  namespaces: string[];
-  resources: Resource;
+	children: React.ReactNode;
+	locale: string;
+	namespaces: string[];
+	resources: Resource;
 };
 
 export const TranslationProvider = ({
-  children,
-  locale,
-  namespaces,
-  resources,
+	children,
+	locale,
+	namespaces,
+	resources,
 }: TranslationProviderProps) => {
-  const i18n = createInstance();
+	const i18n = createInstance();
 
-  initTranslations(locale, namespaces, i18n, resources);
+	initTranslations(locale, namespaces, i18n, resources);
 
-  return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;
+	return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;
 };

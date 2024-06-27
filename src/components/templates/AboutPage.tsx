@@ -1,13 +1,12 @@
 import { Layout } from '@/components/layouts';
-import { FavoriteTechStack, Summary } from '@/components/organisms';
+import { Summary } from '@/components/organisms';
 
 const AboutPage = () => {
-  return (
-    <Layout>
-      <Summary />
-      <FavoriteTechStack />
-    </Layout>
-  );
+	return (
+		<Layout>
+			<Summary />
+		</Layout>
+	);
 };
 
 export default AboutPage;
