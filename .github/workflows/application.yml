@@ -12,13 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup node
+      - name: Setup bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
       - name: Install all dependencies
-        run: bun --frozen-lockfile
+        run: bun install
 
       - name: Format check application
         run: bun format:check
