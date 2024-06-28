@@ -8,17 +8,17 @@ import { ProjectProvider } from '@/contexts/project';
 import { theme } from '@/styles/theme';
 
 type ProvidersProps = {
-	children: React.ReactNode;
+  children: React.ReactNode;
 };
 
 export const Providers = ({ children }: ProvidersProps) => {
-	return (
-		<CacheProvider>
-			<ChakraProvider theme={theme}>
-				<AboutProvider>
-					<ProjectProvider>{children}</ProjectProvider>
-				</AboutProvider>
-			</ChakraProvider>
-		</CacheProvider>
-	);
+  return (
+    <CacheProvider>
+      <ChakraProvider theme={theme}>
+        <AboutProvider>
+          <ProjectProvider>{children}</ProjectProvider>
+        </AboutProvider>
+      </ChakraProvider>
+    </CacheProvider>
+  );
 };

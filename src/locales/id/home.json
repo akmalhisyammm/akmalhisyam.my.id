@@ -1,16 +1,16 @@
 {
-	"title": "Beranda",
-	"description": "Situs pribadi Akmal Hisyam.",
-	"hero": {
-		"greeting": "Halo, Saya {{nickname}}.",
-		"headline": "Saat ini bekerja sebagai {{occupation}}.",
-		"cta": {
-			"resume": "Resume",
-			"about": "Pelajari tentang saya"
-		}
-	},
-	"featuredProjects": {
-		"title": "Proyek Unggulan",
-		"cta": "Lihat semua proyek"
-	}
+  "title": "Beranda",
+  "description": "Situs pribadi Akmal Hisyam.",
+  "hero": {
+    "greeting": "Halo, Saya {{nickname}}.",
+    "headline": "Saat ini bekerja sebagai {{occupation}}.",
+    "cta": {
+      "resume": "Resume",
+      "about": "Pelajari tentang saya"
+    }
+  },
+  "featuredProjects": {
+    "title": "Proyek Unggulan",
+    "cta": "Lihat semua proyek"
+  }
 }
