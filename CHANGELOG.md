@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/akmalhisyammm/akmalhisyam.my.id/compare/v1.3.0...v1.4.0) (2024-07-01)
+
+
+### Features
+
+* add latest projects data ([#22](https://github.com/akmalhisyammm/akmalhisyam.my.id/issues/22)) ([940d7d0](https://github.com/akmalhisyammm/akmalhisyam.my.id/commit/940d7d0ed5f3c6647b765c3460c293533ea871a5))
+
 ## [1.3.0](https://github.com/akmalhisyammm/akmalhisyam.my.id/compare/v1.2.0...v1.3.0) (2024-01-22)
 
 
