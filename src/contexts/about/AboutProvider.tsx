@@ -28,7 +28,7 @@ export const AboutProvider = ({ children }: AboutProviderProps) => {
   const about: About = {
     name: 'Muhammad Akmal Hisyam',
     nickname: 'Akmal',
-    occupation: 'Freelance Front-End Developer',
+    occupation: 'Software Engineer',
     photo: `${IMAGE_URL}/about/profile.jpg`,
     avatar: `${IMAGE_URL}/about/avatar.png`,
     resume:
